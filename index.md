@@ -13,11 +13,12 @@
 - DEDECMS、WORDPRESS等CMS二次开发
 
 技能
-1. 熟练使用TP框架、laravel框架建设一般的企业网站、前端使用bootstrap、layui、VUE、JQ等、熟悉less，后台开发涉及权限管理、网站各种参数管理、日志管理、会员管理员管理、轮播商品管理等
+1. 熟练使用TP框架、laravel框架建设一般的企业网站、前端使用bootstrap、layui、VUE、JQ等、熟悉
+   less，后台开发涉及权限管理、网站各种参数管理、日志管理、会员管理员管理、轮播商品管理等
 2. 熟悉微信小程序开发、微信公众平台开发，从服务器HTTPS配置，到前端页面，后台逻辑均由我一人实现
 3.熟悉DEDECMS、WP等CMS的二次开发
 
-[Link](url) and ![Image](src)
+
 ```
 
 
