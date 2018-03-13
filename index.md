@@ -1,23 +1,21 @@
 ### AJAX
-$.ajax({
-		url: "/path/to/file",//请求地址
-		type: "POST",//请求方式
-		dataType: "JSON",//返回数据类型
-		data: {param1: "value1"},//发送的参数
-		success:function(data){
-			//成功执行的方法
-			alert("success");
-		},
-		error:function(){
-			//失败执行的方法
-			alert("error");
-		}
-	})
-  
-  ###Mysqli
-  <?php
-    $mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');
-
+	$.ajax({
+			url: "/path/to/file",//请求地址
+			type: "POST",//请求方式
+			dataType: "JSON",//返回数据类型
+			data: {param1: "value1"},//发送的参数
+			success:function(data){
+				//成功执行的方法
+				alert("success");
+			},
+			error:function(){
+				//失败执行的方法
+				alert("error");
+			}
+		})
+### Mysqli
+     <?php
+     $mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');
     /* check connection */
     if (mysqli_connect_errno()) {
         printf("Connect failed: %s\n", mysqli_connect_error());
@@ -97,8 +95,8 @@ $.ajax({
       mysql_insert_id(connection) 
        函数返回上一步 INSERT 操作产生的 ID
 
-###文件上传
-    <?php
+### 文件上传
+    <?php
       if ((($_FILES["file"]["type"] == "image/gif")
       || ($_FILES["file"]["type"] == "image/jpeg")
       || ($_FILES["file"]["type"] == "image/pjpeg"))
@@ -123,20 +121,20 @@ $.ajax({
           echo "Invalid file";
         }
     ?>
-###文件下载
-   <?php 
-      $file="./Upload/575e163e8938f.pptx";
-      header("Content-type:application/octet-stream");//二进制文件
-      $fileName = basename($file);//获得文件名
-      header("Content-Disposition:attachment;filename=<?php echo ($fileName); ?>");//下载窗口中显示的文件名
-      header("Accept-ranges:bytes");//文件尺寸单位  
-      header("Accept-length:".filesize($file));//文件大小  
-      readfile($file);//读出文件内容
-    ?>
-###正则
-    <?php
+### 文件下载
+	  <?php 
+	      $file="./Upload/575e163e8938f.pptx";
+	      header("Content-type:application/octet-stream");//二进制文件
+	      $fileName = basename($file);//获得文件名
+	      header("Content-Disposition:attachment;filename=<?php echo ($fileName); ?>");//下载窗口中显示的文件名
+	      header("Accept-ranges:bytes");//文件尺寸单位  
+	      header("Accept-length:".filesize($file));//文件大小  
+	      readfile($file);//读出文件内容
+	    ?>
+### 正则
+    <?php
       $preg= "/xuebingsi/";
       $c = preg_match($preg,"学并思网址xuebingsi.com");
       echo $c;
-    ?>
+      ?>
 
