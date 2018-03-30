@@ -141,11 +141,14 @@
 	    ?>
 
 ### 正则
-    <?php
+    <?php
       $preg= "/xuebingsi/";
       $c = preg_match($preg,"学并思网址xuebingsi.com");
       echo $c;
       ?>
+
+### 判断电脑手机自动跳转
+     
 
 
 
