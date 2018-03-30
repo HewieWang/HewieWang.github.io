@@ -47,7 +47,10 @@
     /* close connection */
     $mysqli->close();
     ?>
-    ###Mysql
+    
+    
+### Mysqli
+  
     连接数据库
       mysql_connect(server,user,pwd,newlink,clientflag)
       如果成功，则返回一个 MySQL 连接标识，失败则返回 FALSE。
@@ -66,7 +69,8 @@
 
       发送查询
       mysql_query(query,connection)
-      mysql_query() 仅对 SELECT，SHOW，EXPLAIN 或DESCRIBE 语句返回一个资源标识符，如果查询执行不正确则返回 FALSE。对于其它类型的 SQL 语句，mysql_query() 在执行成功时返回 TRUE，出错时返回 FALSE。
+      mysql_query() 仅对 SELECT，SHOW，EXPLAIN 或DESCRIBE 语句返回一个资源标识符，如果查询执行不正确则返回 FALSE。
+      对于其它类型的 SQL 语句，mysql_query() 在执行成功时返回 TRUE，出错时返回 FALSE。
 
       通过结果集取数据
       mysql_fetch_row(data)
@@ -74,7 +78,8 @@
       mysql_fetch_assoc(data)
       函数从结果集中取得一行作为关联数组。
       mysql_fetch_array(data,array_type)
-      函数从结果集中取得一行作为关联数组，或数字数组，或二者兼有参数（MYSQL_ASSOC - 关联数组,MYSQL_NUM - 数字数组,MYSQL_BOTH - 默认。同时产生关联和数字数组）
+      函数从结果集中取得一行作为关联数组，或数字数组，或二者兼有参数（MYSQL_ASSOC - 关联数组,MYSQL_NUM - 数字数组,
+      MYSQL_BOTH - 默认。同时产生关联和数字数组）
 
       释放结果内存
       mysql_free_result(data) 
@@ -122,6 +127,8 @@
 		  echo "Invalid file";
 		}
 	    ?>
+
+
 ### 文件下载
 	  <?php 
 	      $file="./Upload/575e163e8938f.pptx";
@@ -132,6 +139,7 @@
 	      header("Accept-length:".filesize($file));//文件大小  
 	      readfile($file);//读出文件内容
 	    ?>
+
 ### 正则
     <?php
       $preg= "/xuebingsi/";
