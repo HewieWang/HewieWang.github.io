@@ -148,7 +148,12 @@
       ?>
 
 ### 判断电脑手机自动跳转
-     
+     <script type="text/javascript">
+	try {var urlhash = window.location.hash;
+	if (!urlhash.match("fromapp"))
+	{if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)))
+	{window.location="http://m.xx.com";}}}catch(err){}</script>
+
 
 
 
