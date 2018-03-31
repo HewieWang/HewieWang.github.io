@@ -1,0 +1,7 @@
+Kali Linux默认安装了这个工具，如果你使用的是其它Linux发行版。例如Ubuntu，执行安装命令：
+
+sudo apt-get install fcrackzip
+
+如果已知zip的密码是数字，所以我可以执行（加快破解速度）：
+
+fcrackzip -b -c '1' -l 1-10 -u crack_this.zip 
