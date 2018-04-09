@@ -152,6 +152,19 @@
 	if (!urlhash.match("fromapp")){if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)))
 	{window.location="http://m.xx.com";}}}catch(err){}</script>
         
+### PHP生成随机6位密码
+	function GetRandStr($length){  
+		$str='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';  
+		$len=strlen($str)-1;  
+		$randstr='';  
+		for($i=0;$i<$length;$i++){  
+		$num=mt_rand(0,$len);  
+		$randstr .= $str[$num];  
+		}  
+	   return $randstr;  
+	} 
+	$number=GetRandStr(6); 
+	echo $number;
 
 
 
