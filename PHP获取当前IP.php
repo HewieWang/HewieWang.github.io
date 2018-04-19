@@ -1,4 +1,5 @@
-方法1：
+</php
+//方法1：
 
 function getip(){
         $unknown = 'unknown'; 
@@ -16,6 +17,7 @@ function getip(){
 }
 
 
-方法2：
+//方法2：
 
 $_SERVER['REMOTE_ADDR']
+?>
