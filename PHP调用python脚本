@@ -1,0 +1,1 @@
+$cmd = system("python 1.py",$ret);
