@@ -1,0 +1,14 @@
+1.淘宝接口通过ip获取地址   JSON格式
+  
+  function getTaobaoAddress(){  
+      $ipContent   = file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip="); 
+      return $jsonAddress;  
+  }
+
+2.新浪接口通过ip获取地址（已经不能使用）
+public function getSinaAddress(){  
+     $ipContent   = file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=");  
+     $jsonData = explode("=",$ipContent);  
+     $jsonAddress = substr($jsonData[1], 0, -1);  
+     return $jsonAddress;  
+ }
