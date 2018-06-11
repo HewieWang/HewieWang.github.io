@@ -1,0 +1,46 @@
+Set WshShell=Wscript.CreateObject("Wscript.Shell")  
+Function FilesTree(sPath)      
+'遍历一个文件夹下的所有文件夹文件夹      
+    Set oFso = CreateObject("Scripting.FileSystemObject")      
+    Set oFolder = oFso.GetFolder(sPath)      
+    Set oSubFolders = oFolder.SubFolders      
+          
+    Set oFiles = oFolder.Files      
+    For Each oFile In oFiles      
+        WScript.Echo oFile.Path  
+          
+        'oFile.Delete      
+    Next      
+          
+    For Each oSubFolder In oSubFolders      
+        WScript.Echo oSubFolder.Path      
+        'oSubFolder.Delete      
+        FilesTree(oSubFolder.Path)'递归      
+    Next      
+          
+    Set oFolder = Nothing      
+    Set oSubFolders = Nothing      
+    Set oFso = Nothing      
+End Function  
+FilesTree(WshShell.SpecialFolders("Desktop"))
+
+
+
+第二种：
+Set wshell = CreateObject("WScript.Shell")  
+PathDesktop = wshell.specialfolders("Desktop")'得到桌面的绝对路径  
+Dim fso, fc  
+Set fso = CreateObject("Scripting.FileSystemObject")  
+Set fs = fso.GetFolder(PathDesktop).SubFolders '遍历子文件夹  
+SK = vbcrlf & vbcrlf  
+For Each fls In fs  
+    SK = SK & fls.Name & vbcrlf  
+Next  
+Set fc = fso.GetFolder(PathDesktop).Files '遍历文件夹下的文件  
+CK = vbcrlf &vbcrlf  
+For Each flc In fc  
+    CK = CK & flc.Name & vbcrlf  
+Next  
+txt = SK & CK  
+Msgbox txt, 64+4096  
+Set wshell = nothing
