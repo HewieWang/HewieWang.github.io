@@ -63,20 +63,15 @@ class Application_ui(Frame):
         self.master.title('新氧刷评论')
         self.master.geometry('757x385')
         self.createWidgets()
-
     def createWidgets(self):
         self.top = self.winfo_toplevel()
-
         self.style = Style()
-
         self.style.configure('Label1.TLabel',anchor='w', font=('宋体',24))
         self.Label1 = Label(self.top, text='URL地址', style='Label1.TLabel')
         self.Label1.place(relx=0.045, rely=0.135, relwidth=0.16, relheight=0.08)
-
         self.Text1Var = StringVar(value='')
         self.Text1 = Entry(self.top, textvariable=self.Text1Var, font=('宋体',9))
         self.Text1.place(relx=0.238, rely=0.116, relwidth=0.714, relheight=0.099)
-
         self.style.configure('Label3.TLabel',anchor='w', foreground='#FF0000', font=('宋体',26))
         self.Label3 = Label(self.top, text='密码默认为weixin123', style='Label3.TLabel')
         self.Label3.place(relx=0.045, rely=0.829, relwidth=0.499, relheight=0.118)
