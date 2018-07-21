@@ -1,5 +1,5 @@
 ### AJAX
-	$.ajax({
+	        $.ajax({
 			url: "/path/to/file",//请求地址
 			type: "POST",//请求方式
 			dataType: "JSON",//返回数据类型
