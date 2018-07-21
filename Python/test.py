@@ -27,33 +27,19 @@ else:  #Python 3.x
     #import tkinter.simpledialog as tkSimpleDialog    #askstring()
 def shua(url,tel,wd):
 	browser = webdriver.Chrome()
-
 	browser.get(url)
-
-
 	browser.find_element_by_class_name("loginLink").click()
-
 	time.sleep(3)
-
 	browser.find_element_by_link_text("账号密码登录").click()
-
 	time.sleep(3)
-
 	browser.find_element_by_id("login_name").send_keys(tel)
 	browser.find_element_by_id("password_").send_keys("weixin123")
-
 	time.sleep(4)
-
 	browser.find_element_by_xpath("//div[@class='login-form ordinary']/form/div[4]/a").click()
-
 	time.sleep(3)
-
 	# 登陆结束
-
 	browser.find_element_by_class_name("answer_btn").click()
-
 	time.sleep(2)
-
 	tels=['15699569904','13458743124','13550607794','18474391931','18474391931','15111538746','13068877544','18474392360','18602057020','18613017382','18620732396','18613016395','18602056783','18602050131','13550636164','15643003604','13011724176','13288651327','13610146983','18482396618','18200410325','18280530942','15678540193','15008344800','18245485294','18602067170','15643051474','13487545145','15884503440','15183834934']
 	telran=random.randint(0,29)
 	ntel=tels[telran]
@@ -109,7 +95,6 @@ class Application(Application_ui):
         url=self.Text1Var.get()
         # tel=self.Text2Var.get()
         # wd=self.Text3Var.get()
-
 # 随机获取账号
         tels=['15699569904','13458743124','13550607794','18474391931','18474391931','15111538746','13068877544','18474392360','18602057020','18613017382','18620732396','18613016395','18602056783','18602050131','13550636164','15643003604','13011724176','13288651327','13610146983','18482396618','18200410325','18280530942','15678540193','15008344800','18245485294','18602067170','15643051474','13487545145','15884503440','15183834934']
         telran=random.randint(0,29)
@@ -126,17 +111,10 @@ class Application(Application_ui):
         	newwd=wds[newwdnum]
         	shua(url,newtel,newwd)
         	n=n+1
-        
         # messagebox.showinfo('Message', '正在进行')
         pass
-
 if __name__ == "__main__":
     top = Tk()
     Application(top).mainloop()
     try: top.destroy()
     except: pass
-
-
-
-
-
