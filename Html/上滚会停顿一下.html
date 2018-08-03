@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>会停顿一下</title>
+	<style type="text/css">
+    .notice {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+        height: 45px;
+    }
+    .notice_list {
+        width: 100%;
+        float: right;
+        height: 33px;
+        overflow: hidden;    
+    }
+    .notice_list li{
+        list-style-type: none;
+        height: 33px;
+    }
+</style>
+</head>
+<body>
+	<div class="notice">
+        <div class="notice_list" id="notice_list_content">
+            <ul>
+                <li>    
+                    第一
+                </li>
+                <li>    
+                    第二
+                </li>
+                <li>    
+                    第三
+                </li>
+                <li>    
+                    第四
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <script type="text/javascript">
+    var area = document.getElementById('notice_list_content');
+    area.innerHTML += area.innerHTML;
+    area.scrollTop = 0;
+    var timer;
+    function startMove(){
+        timer = setInterval(scrollUp,50);
+        area.scrollTop++;        
+    }
+    function scrollUp()
+    {
+        if(area.scrollTop%33 === 0)
+        {
+            clearInterval(timer);
+            setTimeout(startMove,1000);
+        }
+        else
+        {
+            area.scrollTop++;
+            if(area.scrollTop >= area.scrollHeight/2)
+            {
+                area.scrollTop = 0;
+            }
+        }
+    }
+    setTimeout(startMove,1000);
+    </script>
+</body>
+</html>

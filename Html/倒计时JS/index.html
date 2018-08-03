@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/countDown.js"></script>
+	<style type="text/css">
+	.count_down { font-size: 30px; line-height: 1; color: #313131; text-align: center; width: 464px; margin: 0 0 0 503px; white-space: nowrap; font-family: "微软雅黑"; font-weight: bold; }
+	.hour,.min,.sec { margin-left: 9px;}
+	</style>
+</head>
+<body>
+	<!-- <div class="count_down"></div> -->
+	<div class="count_down"><span class="day_num"></span><span class="hour_num"></span><span class="min_num"></span><span class="sec_num"></span></div>
+	
+<script type="text/javascript">
+	$(function(){
+		$(".count_down").countDown({
+			startTimeStr:'2017/01/11 00:00:00',//开始时间
+        	endTimeStr:'2028/01/17 23:59:59',//结束时间
+        	daySelector:".day_num",
+            hourSelector:".hour_num",
+            minSelector:".min_num",
+            secSelector:".sec_num"
+		});
+	})
+	</script>
+	
+&lt;script type=&quot;text/javascript&quot;&gt;<br>
+$(function(){<br>
+$(&quot;.count_down&quot;).countDown({<br>
+startTimeStr:'2017/01/11 00:00:00',//开始时间<br>
+endTimeStr:'2028/01/17 23:59:59',//结束时间<br>
+daySelector:&quot;.day_num&quot;,<br>
+hourSelector:&quot;.hour_num&quot;,<br>
+minSelector:&quot;.min_num&quot;,<br>
+secSelector:&quot;.sec_num&quot;<br>
+});<br>
+})<br>
+&lt;/script&gt;
+		
+</body>
+</html>

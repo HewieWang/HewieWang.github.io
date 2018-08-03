@@ -1,0 +1,60 @@
+﻿body {
+    background: none repeat scroll 0 0 #000000;
+}
+.first_neon {
+    background: none repeat scroll 0 0 #000000;
+    border: 1px solid;
+    border-radius: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-family:"Warnes";
+    margin: auto;
+    padding: 26px 10px;
+    text-align: center;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FF00DE, 0 0 70px #FF00DE, 0 0 80px #FF00DE, 0 0 100px #FF00DE;
+    transition: text-shadow 0.5s ease 0s;
+    width: 250px;
+}
+
+.first_neon:hover {
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #00FFFF, 0 0 70px #00FFFF, 0 0 80px #00FFFF, 0 0 100px #00FFFF;
+}
+
+.second_neon {
+    border: 1px solid;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: table-cell;
+    float: left;
+    font-family:"Zeyada";
+    margin-left: 20px;
+	transition: text-shadow 0.5s ease 0s;
+    padding: 45px 25px;
+    text-align: center;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 15px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #008000, 0 0 70px #008000, 0 0 80px #008000, 0 0 100px #008000;
+    width: 250px;
+}
+.second_neon:hover {
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FFFF00, 0 0 70px #FFFF00, 0 0 80px #FFFF00, 0 0 100px #FFFF00;
+}
+.third_neon {
+    border: 1px solid;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: table-cell;
+    float: left;
+    font-family:"Princess Sofia";
+    margin-left: 20px;
+	transition: text-shadow 0.5s ease 0s;
+	padding: 13px 25px;
+    text-align: center;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 15px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #00FFFF, 0 0 70px #00FFFF, 0 0 80px #00FFFF, 0 0 100px #00FFFF;
+    width: 250px;
+}
+
+.third_neon:hover {
+    text-shadow: 0 0 6px #FFFFFF, 0 0 15px #FFFFFF, 0 0 25px #FFFFFF, 0 0 40px #7FFF00, 0 0 70px #7FFF00, 0 0 80px #7FFF00, 0 0 100px #7FFF00;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.bubble {
+  padding: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bubble:after {
+  clear: both;
+  content: '';
+}
+
+.bubble a.avatar {
+  display: block;
+  height: 44px;
+  width: 44px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bubble a.avatar > img {
+  width: 100%;
+  height: 100%;
+}
+
+.bubble.left a.avatar {
+  float: left;
+}
+
+.bubble.right a.avatar {
+  float: right;
+}
+
+.bubble .content {
+  width: auto;
+  padding: 0.5em;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 6px;
+  border: 1px solid;
+  position: relative;
+  display: inline-block;
+}
+
+.bubble .content:before {
+  content: '';
+  display: inline-block;
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  position: absolute;
+  background-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+}
+
+.bubble.left {
+  text-align: left;
+}
+
+.bubble.right {
+  text-align: right;
+}
+
+.bubble.left .wrap {
+  margin-left: 56px;
+  margin-right: 56px;
+}
+
+.bubble.left .content {
+  background: #1abc9c;
+  border-color: #1abc9c;
+  color: #fff;
+}
+
+.bubble.left .content:before {
+  left: -6px;
+  top: 16px;
+  transform: rotate(135deg);
+}
+
+.bubble.right .wrap {
+  margin-right: 56px;
+  margin-left: 56px;
+}
+
+.bubble.right .content {
+  background: #2ecc71;
+  border-color: #2ecc71;
+  color: #fff;
+  text-align: left;
+}
+
+.bubble.right .content:before {
+  right: -6px;
+  top: 16px;
+  transform: rotate(-45deg);
+}
+
+	</style>
+</head>
+<body>
+	
+<div class="bubble left">
+  <a class="avatar" href>
+    <img src="https://cdn2.jsrun.net/avatar/8054_1522212412298.png" alt/>
+  </a>
+  <div class="wrap">
+    <div style="margin:-5px 10px 5px auto;font-weight:800;display: inline-block;">
+      韩东东
+    </div>
+    <span style="font-size:10px;color:#adadad">
+      08:50
+    </span>
+    <div class="content">
+      雄县发布的新闻稿表示，设立河北雄安新区，是以习近平同志为核心的党中央作出的一项重大历史性战略选择，是深入推进京津冀协同发展的重大决策部署。消息发布后，立即成为全国热议的焦点。一些媒体为吸引人群关注、追求点击率，跟风发布相关“雄安新区区域内房地产价格疯涨”等类似消息，引起社会广泛关注。
+    </div>
+  </div>
+</div>
+<div class="bubble right">
+  <a class="avatar" href>
+    <img src="https://cdn2.jsrun.net/avatar/8054_1522212412298.png" alt/>
+  </a>
+  <div class="wrap">
+    <div>
+      aaaa
+    </div>
+    <div class="content">
+      从雄县来看，这些情况与实际不符。
+    </div>
+  </div>
+</div>
+<div class="bubble left">
+  <a class="avatar" href>
+    <img src="https://cdn2.jsrun.net/avatar/8054_1522212412298.png" alt/>
+  </a>
+  <div class="wrap">
+    <div class="content">
+      清明节期间，雄县人员流动较大。通过走访了解，一是慕名而来，认为雄安新区“雄”字开头就是雄县，来县拍照留念人员较多；二是周边游客假期出游，雄县区位优越，交通便捷，拥有白洋淀、温泉等旅游资源，每逢节假日都会吸引大批京津游客；三是京津及周边地区的投资客，对新区建设存在高预期值，来寻找投资房产机会，在了解到雄县已经暂停所有房地产交易，整个区域处于“有价无市、有市无房、有房也不能交易”的严管严控状态的情况后，打消炒房念头，怀着美好的愿望而来，带着满满的遗憾而去。目前，随着全县房屋销售管理力度不断加大，广大群众的认识程度提高，对购房的关注度明显降温，县域内房地产市场未出现大规模的炒作现象。
+    </div>
+  </div>
+</div>
+<div class="bubble right">
+  <a class="avatar" href>
+    <img src="https://cdn2.jsrun.net/avatar/8054_1522212412298.png" alt/>
+  </a>
+  <div class="wrap">
+    <div class="content">
+      坚决抵制非法私下交易，不轻信、不传播、不参与各类房产销售宣传活动和炒房行为。
+    </div>
+  </div>
+</div>
+</body>
+</html>
