@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+</head>
+<body style="overflow:hidden">
+	<div id="scene">
+	  <div data-depth="0.2"><img src="https://cdn.pixabay.com/photo/2018/06/17/19/12/church-3481187_960_720.jpg"></div>
+	  <div data-depth="0.6"><img src="https://cdn.pixabay.com/photo/2016/02/23/17/47/grape-1218185_960_720.png" alt=""></div>
+	</div>
+	<script type="text/javascript">
+		var scene = document.getElementById('scene');
+		var parallaxInstance = new Parallax(scene, {
+		  relativeInput: true
+		});
+	</script>
+</body>
+</html>

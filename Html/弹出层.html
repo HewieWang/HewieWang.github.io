@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>弹出层</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/limonte-sweetalert2/7.21.1/sweetalert2.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.21.1/sweetalert2.all.min.js"></script>
+</head>
+<body>
+<h1 id="h1">弹出层</h1>
+<button type="button" class="btn btn-primary" id="bt">提示</button>
+<button type="button" class="btn btn-primary" id="bt2">表单</button>
+<button type="button" class="btn btn-primary" id="bt3">TEXT</button>
+<button type="button" class="btn btn-primary" id="bt4">密码</button>
+<button type="button" class="btn btn-primary" id="bt5">Textarea</button>
+<button type="button" class="btn btn-primary" id="bt6">File</button>
+<button type="button" class="btn btn-primary" id="bt7">基础</button>
+<button type="button" class="btn btn-primary" id="bt8">询问框</button>
+<button type="button" class="btn btn-primary" id="bt9">错误框</button>
+<button type="button" class="btn btn-primary" id="bt10">Modal</button>
+<button type="button" class="btn btn-primary" id="bt11">Confirm</button>
+
+	<script type="text/javascript">
+	$(function(){
+		$('#bt').click(function(){
+			const toast = swal.mixin({
+			  toast: true,
+			  position: 'top-end',
+			  showConfirmButton: false,
+			  timer: 3000
+			});
+
+			toast({
+			  type: 'success',
+			  title: 'Signed in successfully'
+			})
+		})
+		$('#bt2').click(async function(){
+			const {value: formValues} = await swal({
+			  title: 'Multiple inputs',
+			  html:
+			    '<input id="swal-input1" class="swal2-input">' +
+			    '<input id="swal-input2" class="swal2-input">',
+			  focusConfirm: false,
+			  preConfirm: () => {
+			    return [
+			      document.getElementById('swal-input1').value,
+			      document.getElementById('swal-input2').value
+			    ]
+			  }
+			})
+
+			if (formValues) {
+			  swal(json.stringify(formValues))
+			}
+		})
+		$('#bt3').click(async function(){
+			const {value: name} = await swal({
+			  title: 'What is your name?',
+			  input: 'text',
+			  inputPlaceholder: 'Enter your name or nickname',
+			  showCancelButton: true,
+			  inputValidator: (value) => {
+			    return !value && 'You need to write something!'
+			  }
+			})
+
+			if (name) {
+			  swal({type: 'success', title: 'Hi, ' + name})
+			}
+		})
+		$('#bt4').click(async function(){
+			const {value: password} = await swal({
+			  title: 'Enter your password',
+			  input: 'password',
+			  inputPlaceholder: 'Enter your password',
+			  inputAttributes: {
+			    maxlength: 10,
+			    autocapitalize: 'off',
+			    autocorrect: 'off'
+			  }
+			})
+
+			if (password) {
+			  swal('Entered password: ' + password)
+			}
+		})
+		$('#bt5').click(async function(){
+			const {value: text} = await swal({
+			  input: 'textarea',
+			  inputPlaceholder: 'Type your message here',
+			  showCancelButton: true
+			})
+
+			if (text) {
+			  swal(text)
+			}
+		})
+		$('#bt6').click(async function(){
+			const {value: file} = await swal({
+			  title: 'Select image',
+			  input: 'file',
+			  inputAttributes: {
+			    'accept': 'image/*',
+			    'aria-label': 'Upload your profile picture'
+			  }
+			})
+
+			if (file) {
+			  const reader = new FileReader
+			  reader.onload = (e) => {
+			    swal({
+			      title: 'Your uploaded picture',
+			      imageUrl: e.target.result,
+			      imageAlt: 'The uploaded picture'
+			    })
+			  }
+			  reader.readAsDataURL(file)
+			}
+		})
+		$('#bt7').click(async function(){
+			swal('Any fool can use a computer')
+		})
+		$('#bt8').click(async function(){
+			swal(
+			  'The Internet?',
+			  'That thing is still around?',
+			  'question'
+			)
+		})
+		$('#bt9').click(async function(){
+			swal({
+			  type: 'error',
+			  title: 'Oops...',
+			  text: 'Something went wrong!',
+			  footer: '<a href>Why do I have this issue?</a>'
+			})
+		})
+		$('#bt10').click(async function(){
+			swal({
+			  imageUrl: 'https://placeholder.pics/svg/300x1500',
+			  imageHeight: 1500,
+			  imageAlt: 'A tall image'
+			})
+		})
+		$('#bt11').click(async function(){
+			swal({
+			  title: 'Are you sure?',
+			  text: "You won't be able to revert this!",
+			  type: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+			  if (result.value) {
+			    swal(
+			      'Deleted!',
+			      'Your file has been deleted.',
+			      'success'
+			    )
+			  }
+			})
+		})
+	})
+	</script>
+</body>
+</html>
