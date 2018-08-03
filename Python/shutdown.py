@@ -30,9 +30,7 @@ class Application_ui(Frame):
 
     def createWidgets(self):
         self.top = self.winfo_toplevel()
-
         self.style = Style()
-
         self.Text1Var = StringVar(value='')
         self.Text1 = Entry(self.top, textvariable=self.Text1Var, font=('宋体',9))
         self.Text1.place(relx=0.293, rely=0.119, relwidth=0.449, relheight=0.304)
