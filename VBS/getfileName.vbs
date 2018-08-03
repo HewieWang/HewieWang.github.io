@@ -8,24 +8,24 @@ temp=ws.ExpandEnvironmentStrings("%Temp%")
 file=temp & "\DirDriveAllFiles.dat"
 inputfolderpath
 Sub inputfolderpath()
-folder=InputBox("ÇëÊäÈëÎÄ¼ş¼ĞÈ«Â·¾¶£º","ÊäÈëÂ·¾¶","")
+folder=InputBox("è¯·è¾“å…¥æ–‡ä»¶å¤¹å…¨è·¯å¾„ï¼š","è¾“å…¥è·¯å¾„","")
 if folder="" Then
 Wscript.Quit
 End if
 if fso.FolderExists(folder)<>True Then
-MsgBox "ÎÄ¼ş¼Ğ²»´æÔÚ£¬ÇëÖØĞÂÊäÈë£¡",0+16,"´íÎó"
+MsgBox "æ–‡ä»¶å¤¹ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ï¼",0+16,"é”™è¯¯"
 inputfolderpath
 End if
 End Sub
 'foler get
 inputtextfile
 Sub inputtextfile()
-textfile=InputBox("ÇëÊäÈëÎÄ±¾ÎÄµµµÄ´´½¨Î»ÖÃ£º","ÊäÈëÂ·¾¶","")
+textfile=InputBox("è¯·è¾“å…¥æ–‡æœ¬æ–‡æ¡£çš„åˆ›å»ºä½ç½®ï¼š","è¾“å…¥è·¯å¾„","")
 if textfile="" Then
 inputfolderpath
 End if
 if fso.FileExists(textfile & ".txt") Then
-MsgBox "ÎÄ¼şÒÑ´æÔÚ£¬Çë»»¸öÃû³Æ£¡",0+16,"´íÎó"
+MsgBox "æ–‡ä»¶å·²å­˜åœ¨ï¼Œè¯·æ¢ä¸ªåç§°ï¼",0+16,"é”™è¯¯"
 inputtextfile
 End if
 End Sub
