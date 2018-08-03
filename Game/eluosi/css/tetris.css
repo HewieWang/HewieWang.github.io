@@ -1,0 +1,73 @@
+div.tetrisGame {
+  position: relative;
+  margin: 50px auto;
+  padding: 0;
+  border: none;
+  width: 600px;
+  height: 600px;
+}
+
+div.tetrisGame div.tetrisLeftPane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+}
+
+div.tetrisLeftPane div.tetrisScore {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  font-size: 20pt;
+}
+
+div.tetrisLeftPane div.tetrisPreview {
+  position: absolute;
+  left: 150px;
+  width: 120px;  /* 4 cols * 30px */
+  height: 120px;  /* 4 rows * 30px */
+}
+
+div.tetrisLeftPane div.tetrisUsage {
+  position: absolute;
+  left: 0;
+  top: 300px;
+}
+
+div.tetrisLeftPane div.tetrisUsage th,
+div.tetrisLeftPane div.tetrisUsage td {
+  text-align: left;
+}
+
+div.tetrisLeftPane div.tetrisUsage td {
+  padding-left: 1em;
+}
+
+div.tetrisRightPane {
+  position: absolute;
+  left: 300px;
+  top: 0px;
+  width: 300px;  /* 10 cols * 30px */
+  height: 600px;  /* 20 rows * 30px */
+}
+
+div.tetrisRightPane div.tetrisBoard {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;  /* 10 cols * 30px */
+  height: 600px;  /* 20 rows * 30px */
+}
+
+div.tetrisBlock {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  border: 1px solid black;
+  background-color: black;
+}
+
+div.tetrisBlock.habitated {
+  border: 1px solid black;
+  background-color: gray;
+}
