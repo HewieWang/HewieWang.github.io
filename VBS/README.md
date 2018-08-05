@@ -17,3 +17,12 @@ End Function<br>
 使用：(生成7位随机字符串)<br>
 
 MakeStr(7)
+
+### VBS对文件文件夹操作的例子
+* 创建文件夹
+```VBScript
+Dim fso, f
+'如果指定的文件夹已经存在，则会出现错误。
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set f = fso.CreateFolder("c:\New Folder")
+```
