@@ -27,3 +27,10 @@
 * [sass2css](https://sass2css.herokuapp.com/)
 * [css2sass](http://css2sass.herokuapp.com/)
 * [GIF在线制作](http://www.gifntext.com/)
+
+### 微信小程序
+
+* [微信小程序实例源码大全下载](https://blog.csdn.net/zhangdaiscott/article/details/53200276)
+* [微信小程序解决方案](http://www.wxapp-union.com/special/solution.html#part1)
+* [微信小程序支付](http://www.cnblogs.com/myloveblogs/p/6623708.html)
+* [PHP：微信小程序 微信支付服务端集成实例详解及源码](https://www.jb51.net/article/102143.htm)
