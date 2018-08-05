@@ -1,0 +1,30 @@
+
+
+'DB_TYPE' => 'mysql',
+'DB_HOST' => '127.0.0.1',
+'DB_NAME' => 'mz',
+'DB_USER' => 'root',
+'DB_PWD' => '',
+'DB_PORT' => '3306',
+
+
+'db_type' => 'mysql', // 数据库类型
+'db_host' => 'localhost', // 主机地址
+'db_user' => 'root', // 用户名
+'db_pwd' => 'xxxxxxx', // 密码
+'db_port' => 3306, // 端口
+'db_name' => 'xxx', // 数据库名称
+'db_prefix' => 'ny_', // 数据表前缀
+'db_charset' => 'utf8', // 数据库编码
+'url_model' => 2, // url模式
+'url_html_suffix' => '', // url后缀
+'url_case_insensitive' => false, // url区分大小写
+'error_page' => '/Public/Error/404.htm', // 配置404错误页面
+'module_allow_list' => array('Home','Nicksystem'), // 允许访问的模块列表
+'default_module' => 'Home', // 默认模块
+'default_controller' => 'Activity', // 默认控制器
+'url_module_map' => array('nicksystem'=>'admin'), // 模块映射
+'url_router_on' => true, // 开启路由
+'url_route_rules' => array( // 路由规则
+    'System' => 'nicksystem/Login/index'
+)
