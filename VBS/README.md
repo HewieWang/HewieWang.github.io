@@ -26,8 +26,6 @@ Dim fso, f
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set f = fso.CreateFolder("c:\New Folder")
 ```
-<<<<<<< HEAD
-=======
 * 删除文件夹
 ```VBScript
 Dim fso,filespec
@@ -315,4 +313,3 @@ Function 递归遍历所有子目录(目录)
     递归遍历所有子目录=GetSubFolders(目录)
 End Function
 ```
->>>>>>> f59eee2c48266bdab2e273b5bde2aa1dbb5cb5f8
