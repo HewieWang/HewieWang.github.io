@@ -41,6 +41,10 @@ a ^= b;
 b ^= a;
 a ^= b;
 ```
+```Javascript
+var a = 3,b = 4;
+[b, a] = [a, b]
+```
 
 # 取整
 ```Javascript
