@@ -1,3 +1,14 @@
+# JS过滤特殊字符
+```Javascript
+function checkinput(str){
+	newstr=str.replace(/\s+/g,"");
+	if(newstr==''){alert('请输入!');return false;}
+	else if(newstr.indexOf("'")!=-1||newstr.indexOf("\"")!=-1||newstr.indexOf("@")!=-1)
+	{alert('请勿输入特殊字符!');return false;}
+	else{return newstr;}
+}
+```
+
 # 优雅的取随机字符串
 ```Javascript
 Math.random().toString(16).substring(2) 
