@@ -1,4 +1,4 @@
-</php
+<?php
 //方法1：
 
 function getip(){
@@ -19,5 +19,5 @@ function getip(){
 
 //方法2：
 
-$_SERVER['REMOTE_ADDR']
+$ip=$_SERVER['REMOTE_ADDR'];
 ?>
