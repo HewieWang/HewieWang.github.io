@@ -1,0 +1,166 @@
+<body oncontextmenu=”return false”></body>
+
+<!– 禁用右键: –>
+<script>
+function stop(){
+return false;
+}
+document.oncontextmenu=stop;
+</script>
+
+<body onselectstart=”return false”> 取消选取、防止复制
+
+oncopy=”return false;” oncut=”return false;” 防止复制
+
+禁止查看源文件
+
+<html>
+<head>
+<script>
+function clear(){
+Source=document.body.firstChild.data;
+document.open();
+document.close();
+document.title=”看不到源代码”;
+document.body.innerHTML=Source;
+}</script>
+</head>
+
+五、图片下载限制
+<script language=”javascript”>
+function Click(){
+if(window.event.srcElement.tagName==”IMG”)
+{
+alert(‘图片直接右键’);
+window.event.returnValue=false;
+}
+}
+document.oncontextmenu=Click;
+</script>
+
+<META HTTP-EQUIV=”imagetoolbar” CONTENT=”no”>  
+插入图片时加入galleryimg属性
+<img galleryimg=”no” src=””>
+
+禁止右键保存
+把下面代码放在<head>和</head>之间
+<SCRIPT LANGUAGE=java script>
+function click() {
+alert(‘对不起,您不能保存此图片,谢谢您的理解和支持!’) }
+function click1() {
+if (event.button==2) {alert(‘对不起,您不能保存此图片,谢谢您的理解和支持!’) }}
+function CtrlKeyDown(){
+if (event.ctrlKey) {alert(‘不当的拷贝将损害您的系统！’) }}
+document.onkeydown=CtrlKeyDown;
+document.onselectstart=click;
+document.onmousedown=click1;
+</SCRIPT>
+
+方式二：
+在页面中加入如下js代码：原理：屏蔽右键
+<script>
+function   document.onmousedown()
+{
+      if(event.button==2||event.button==3)
+      {
+            alert( “右健被禁止 “)
+            return   false
+        }
+
+}
+</script>
+
+网页防复制代码 禁止查看网页源文件代码
+插入网页即可。
+<body leftmargin=”2″ topmargin=”0″ marginwidth=”0″ marginheight=”0″ oncontextmenu=”return
+
+false” ondragstart=”return false” onselectstart =”return false”
+
+onselect=”document.selection.empty()” oncopy=”document.selection.empty()”
+
+onbeforecopy=”return false” onmouseup=”document.selection.empty()”>
+
+<noscript><iframe src=”/blog/*>”;</iframe></noscript>
+
+1. oncontextmenu=”window.event.returnvalue=false” //将彻底屏蔽鼠标右键
+<table border oncontextmenu=return(false)><td>no</table> //可用于Table
+——————————————————————————————–
+
+———-
+
+2. <body onselectstart=”return false”> //取消选取、防止复制
+——————————————————————————————–
+
+———-
+
+3. onpaste=”return false” //不准粘贴
+——————————————————————————————–
+
+———-
+
+4. oncopy=”return false;” oncut=”return false;” // 防止复制
+
+——————————————————————————————–
+
+———-
+
+5.防止被人frame
+<SCRIPT LANGUAGE=javascript><!–
+if (top.location != self.location)top.location=self.location;
+</SCRIPT>
+
+——————————————————————————————–
+
+———-
+
+6. <noscript><iframe src=”/blog/*.html>”;</iframe></noscript> //网页将不能被另存为
+
+——————————————————————————————–
+
+———-
+
+7. //改变连接是状态栏的显示内容
+
+〈a href=”http://v.2best.cc” onMo … ;window.status=’输入连接状态栏显示内容’；return true”>
+
+——————————————————————————————–
+
+———-
+
+8. //禁止网页中目标对象被下载(如图片)
+
+下面的代码将帮助你禁止网页中目标对象被下载：
+
+<a href=”javascript:void(0)” onMouseDown=”alert(‘对不起!图片不能下载！’)”>
+
+</a>
+
+——————————————————————————————–
+
+———-
+
+9. //页面禁止刷新完全
+最好在pop出来的窗口里用,没工具栏的
+<body onkeydown=”KeyDown()” onbeforeunload=”location=location”
+oncontextmenu=”event.returnValue=false”>
+
+<script language=”Javascript”><!–
+function KeyDown(){
+if ((window.event.altKey)&&
+((window.event.keyCode==37)||
+(window.event.keyCode==39))){ alert(“请访问我的主页”);
+event.returnValue=false;
+}
+if ((event.keyCode==8)|| (event.keyCode==116)){ //屏蔽 F5 刷新键
+event.keyCode=0;
+event.returnValue=false;
+}
+if ((event.ctrlKey)&&(event.keyCode==78)){ //屏蔽 Ctrl+n
+event.returnValue=false;
+}
+if ((event.shiftKey)&&(event.keyCode==121)){ //屏蔽 shift+F10
+event.returnValue=false;
+}
+}
+</script>
+</body>
