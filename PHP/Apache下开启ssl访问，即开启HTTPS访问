@@ -1,0 +1,35 @@
+首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件（如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前面勾选上）。
+
+第一，进入到apache目录下，在conf 文件夹下 httpd.conf中找到#LoadModule ssl_module modules/mod_ssl.so，去掉前面的注释符，使得ssl模块生效（如果该模块已去掉注释，请不用操作）。
+
+第二，搜索以下内容：【Include conf/vhosts.conf】，在其下面增加一条引用内容：【Include conf/vhostssl.conf】
+
+Listen 443
+<VirtualHost *:443>
+ServerName xxx.com
+ServerAlias www.xxx.com
+DocumentRoot  "D:\xxx"
+SSLEngine on
+SSLProtocol  all -SSLv2 -SSLv3
+SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL
+SSLCertificateFile  "D:\phpStudy\PHPTutorial\Apache\xxxcert\xxx_com.crt"
+SSLCertificateKeyFile "D:\phpStudy\PHPTutorial\Apache\xxxcert\xxx.com.key"
+SSLCertificateChainFile "D:\phpStudy\PHPTutorial\Apache\xxxcert\xxx_com.ca-bundle"
+</VirtualHost>
+
+多域名只需要再添加一个 VirtualHost  即可
+
+第三，重启apache(有可能报错，看一下443端口是否被防火墙拦截或被占用)
+
+第四，apache正常重启后，在浏览器里面输入https://yourdomain.com就能看到安全锁出来啦。
+
+第五，备份好您的证书！
+
+443端口被system进程占用:
+停止服务Routing and Remote Access
+
+单独页面通用代码段：以下方法较适合指定某一个子页单独https在需要强制为https的页面上加入以下代码进行处理http-->https
+
+<script type="text/javascript">
+var url = window.location.href;if (url.indexOf("https") < 0){
+url = url.replace("http:", "https:");window.location.replace(url);}</script>

@@ -105,3 +105,9 @@ function unique(arr) {
 }
 console.log(unique(str_arr))
 ```
+
+# JS判断字符串是否包含某个字符串
+```Javascript
+var str = "123";
+console.log(str.indexOf("3")!=-1);
+```
