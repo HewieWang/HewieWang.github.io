@@ -1,3 +1,19 @@
+# AJAX
+```Javascript
+$.ajax({
+  url: "/path/to/file",
+  type: "POST",
+  dataType: "JSON",
+  data: {param1: "value1"},
+  success:function(data){
+    alert("success");
+  },
+  error:function(){
+    alert("error");
+  }
+})
+```
+
 # JS过滤特殊字符
 ```Javascript
 function checkinput(str){
