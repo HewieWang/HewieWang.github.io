@@ -14,6 +14,17 @@ $.ajax({
 })
 ```
 
+# JS生成随机 N 位数字
+```Javascript
+function randomNum(n){
+  var t='';
+  for(var i=0;i<n;i++){
+  t+=Math.floor(Math.random()*10);
+  }
+  return t;
+}
+```
+
 # JS过滤特殊字符
 ```Javascript
 function checkinput(str){
