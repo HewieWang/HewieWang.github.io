@@ -1,3 +1,5 @@
+# 字符串转为ascii码
+```PHP
 function encode($c, $prefix="&#") {
     $len = strlen($c);
     $a = 0;
@@ -27,11 +29,12 @@ function encode($c, $prefix="&#") {
       $scill .= $prefix.$ud.";";
     }
     return $scill;
-  }
+}
+```
 
-  ascii码转为字符串
-
-  function decode($str, $prefix="&#") {
+# ascii码转为字符串
+```PHP
+function decode($str, $prefix="&#") {
     $str = str_replace($prefix, "", $str);
     $a = explode(";", $str);
     foreach ($a as $dec) {
@@ -47,4 +50,5 @@ function encode($c, $prefix="&#") {
       }
     }
     return $utf;
-  }
+}
+```
