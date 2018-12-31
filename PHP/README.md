@@ -1,3 +1,10 @@
+# PHP CURL去除响应头，响应主体的方法
+###
+```PHP
+curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的正文
+curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
+```
+
 # PHP给每一行文本加引号,逗号
 ###
 ```PHP
