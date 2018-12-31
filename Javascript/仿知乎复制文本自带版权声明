@@ -1,0 +1,38 @@
+#原理
+
+##监听copy事件
+
+###使用 window.getSelection() 获取选中的文本
+
+###使用 clipboardData.setData 操作剪贴板的内容
+
+```Javascript
+document.body.addEventListener('copy', function (e) {
+    if (window.getSelection().toString() &amp;&amp; window.getSelection().toString().length &gt; 42) {
+        setClipboardText(e);
+        alert('商业转载请联系作者获得授权，非商业转载请注明出处，谢谢合作。');
+    }
+});
+function setClipboardText(event) {
+    var clipboardData = event.clipboardData || window.clipboardData;
+    if (clipboardData) {
+        event.preventDefault();
+        var htmlData = ''
+            + '著作权归作者所有。&lt;br&gt;'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。&lt;br&gt;'
+            + '作者：DIYgod&lt;br&gt;'
+            + '链接：' + window.location.href + '&lt;br&gt;'
+            + '来源：Anotherhome&lt;br&gt;&lt;br&gt;'
+            + window.getSelection().toString();
+        var textData = ''
+            + '著作权归作者所有。\n'
+            + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+            + '作者：DIYgod\n'
+            + '链接：' + window.location.href + '\n'
+            + '来源：Anotherhome\n\n'
+            + window.getSelection().toString();
+        clipboardData.setData('text/html', htmlData);
+        clipboardData.setData('text/plain',textData);
+    }
+}
+```
