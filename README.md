@@ -24,6 +24,8 @@
 * [sass2css](https://sass2css.herokuapp.com/)
 * [css2sass](http://css2sass.herokuapp.com/)
 * [GIF在线制作](http://www.gifntext.com/)
+* [图片无损压缩](https://tinypng.com/)
+* [JS加密](http://utf-8.jp/public/aaencode.html)
 
 ### 设计元素&网络字体&APP设计
 
