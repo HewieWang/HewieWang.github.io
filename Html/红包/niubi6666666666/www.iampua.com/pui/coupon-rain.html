@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from www.iampua.com/pui/coupon-rain.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 06:31:51 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>整点红包雨</title>
+    <meta content="整点红包雨" name="description">
+    <meta content="整点红包雨" name="keywords">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <script src="dist/js/pix2rem.min.js"></script>
+    <link href="dist/css/base_2016_11.min.css" rel="stylesheet" />
+    <link href="dist/css/rain_2017_07_21.min.css" rel="stylesheet" />
+    <link href="dist/css/sdialog_2016_11.min.css" rel="stylesheet" />
+</head>
+<body class="bgc_g">
+    <article class="pageview">
+        <section class="main rain">
+            <div class="game_board" id="game_board">
+            </div>
+            <div class="score_board hide" id="score_board">
+                <div class="img">
+                    <img src="dist/img/hby/score_board.png" />
+                </div>
+                <div class="txt" id="score">0</div>
+            </div>
+            <div class="btns clearfix">
+                <a class="btn" href="javascript:void(0);" id="rule_btn">
+                    <img src="dist/img/hby/rule_btn.png" />
+                </a>
+                <a class="btn" href="javascript:void(0);" id="exchange_btn">
+                    <img src="dist/img/hby/dhdbj_btn.png" />
+                </a>
+            </div>
+            <!--规则弹窗-->
+            <div id="rule_dlg" class="rule_dlg hide">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="rule_dlg__t">
+                            <img src="dist/img/hby/rule_t.png">
+                        </div>
+                        <div class="rule_dlg__d">
+                            <div class="rule_dlg__con">
+                                <p>1. 每天中午12:00-12:20有大波红包雨袭来，点击飘落红包，可得到红包对应分数，每天红包总额10万，最高888，当天红包</p>
+                                <p>
+                                    2. 飘落红包中，有翻倍红包、普通红包、空白红包和红包炸弹，抢到翻倍红包，当次红包可在原来基本上翻倍；抢到普通红包，红包总额可累
+                                </p>
+                                <p>
+                                    3. 红包可直接兑换成夺宝券，当天所得红包仅限当天兑换，活动红包10分=1元夺宝券，若夺宝券金额大于1且非整数，按照四舍五入收整
+                                </p>
+                                <p>
+                                    4. 成功兑换后，夺宝券直接派发到您的账号中，请登陆APP在【我的红包】中查看，夺宝券有效期3天，不可转赠，过期作废；
+                                </p>
+                                <p> 5、该活动的最终解释权归XXXX所有。</p>
+                            </div>
+                        </div>
+                        <div class="rule_dlg__close" id="rule_dlg__close">
+                            <img src="dist/img/hby/x.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--兑换弹窗-->
+            <div id="exchange_dlg" class="exchange_dlg hide">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="exchange_dlg__s pulse animated infinite">
+                            <img src="dist/img/hby/share_t.png">
+                        </div>
+                        <div class="exchange_dlg__t">
+                            当前红包总分：<b id="current_score">0</b>
+                        </div>
+                        <div class="exchange_dlg__b">
+                            <span><b id="exchange_val_1">0</b> 元</span>
+                        </div>
+                        <div class="exchange_dlg__d">
+                            <p class="m1">您将兑换 <b id="exchange_val_2">0</b> 元夺宝券</p>
+                            <p class="m2">太遗憾了<br />你的红包总分未满 <b id="exchange_val_3">10</b> 分<br />暂时无法兑现</p>
+                            <p class="s1">（10分=1元夺宝券）</p>
+                            <div class="exchange_dlg__btn" id="exchange_dlg__btn">
+                                <img src="dist/img/hby/confirm_btn.png">
+                            </div>
+                        </div>
+
+                        <div class="exchange_dlg__close" id="exchange_dlg__close">
+                            <img src="dist/img/hby/x.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--兑换成功-->
+            <div id="success_dlg" class="success_dlg hide">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="success_dlg__t">
+                            <img src="dist/img/hby/exchange_success.png">
+                        </div>
+                        <div class="success_dlg__d">
+                            <p class="m1">您已获得 <b id="success_val">0</b> 元夺宝券</p>
+                            <div class="success_dlg__btn" id="success_dlg__btn">
+                                <img src="dist/img/hby/qck_btn.png">
+                            </div>
+                            <p class="s1">请到APP-“我的红包”查看</p>
+                        </div>
+
+                        <div class="success_dlg__close" id="success_dlg__close">
+                            <img src="dist/img/hby/x.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--倒计时-->
+            <div id="countdown_dlg" class="countdown_dlg">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="light rotate"></div>
+                        <div class="countdown_dlg__t">
+                            <img src="dist/img/hby/cd_t.png">
+                        </div>
+                        <div class="countdown_dlg__d">
+                            <p class="tips"><span>距离活动开始还有</span></p>
+                            <div class="countdown_dlg__con" id="countdown_dlg__con" data-time="10"><!--倒计时10秒开始用于测试-->
+                                <span class="h1">0</span><span class="h2">0</span>:<span class="m1">0</span><span class="m2">0</span>:<span class="s1">1</span><span class="s2">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sounds" style="display:none">
+                <audio controls="controls" style="display:none;" class="plus_sound" preload="auto" src="dist/img/hby/audio/plus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="plus_sound" preload="auto" src="dist/img/hby/audio/plus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="plus_sound" preload="auto" src="dist/img/hby/audio/plus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="plus_sound" preload="auto" src="dist/img/hby/audio/plus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="plus_sound" preload="auto" src="dist/img/hby/audio/plus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="empty_sound" preload="auto" src="dist/img/hby/audio/empty.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="empty_sound" preload="auto" src="dist/img/hby/audio/empty.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="empty_sound" preload="auto" src="dist/img/hby/audio/empty.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="empty_sound" preload="auto" src="dist/img/hby/audio/empty.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="empty_sound" preload="auto" src="dist/img/hby/audio/empty.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="multiply_sound" preload="auto" src="dist/img/hby/audio/multiply.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="multiply_sound" preload="auto" src="dist/img/hby/audio/multiply.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="multiply_sound" preload="auto" src="dist/img/hby/audio/multiply.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="multiply_sound" preload="auto" src="dist/img/hby/audio/multiply.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="multiply_sound" preload="auto" src="dist/img/hby/audio/multiply.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="minus_sound" preload="auto" src="dist/img/hby/audio/minus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="minus_sound" preload="auto" src="dist/img/hby/audio/minus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="minus_sound" preload="auto" src="dist/img/hby/audio/minus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="minus_sound" preload="auto" src="dist/img/hby/audio/minus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <audio controls="controls" style="display:none;" class="minus_sound" preload="auto" src="dist/img/hby/audio/minus.mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </section>
+    </article>
+    <script src="../../cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="dist/js/rain.min.js"></script>
+    <script src="../../cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="dist/js/sdialog_2016_11.min.js"></script>
+<script>
+    // 预加载图片
+    preLoadImages(["dist/img/hby/1.png", "dist/img/hby/3.png", "dist/img/hby/5.png", "dist/img/hby/10.png", "dist/img/hby/active_bg.jpg", "dist/img/hby/cd_bg.png", "dist/img/hby/x.png", "dist/img/hby/cp.png", "dist/img/hby/cp_empty.png", "dist/img/hby/cp_open.png", "dist/img/hby/disabled_bg.jpg", "dist/img/hby/exchange_success.png", "dist/img/hby/confirm_btn.png", "dist/img/hby/light.png", "dist/img/hby/o.png", "dist/img/hby/qck_btn.png", "dist/img/hby/score_board.png", "dist/img/hby/x2.png", "dist/img/hby/x3.png"]);
+    $(function () {
+        // 初始化fastclick
+        FastClick.attach(document.body);
+
+        // 初始化整点红包雨游戏
+        var myRain = null;
+        /* myRain = new rain({
+            container: '#game_board', // element,  default value is '#rain_container'.
+            scoreBoard: '#score_board', // element,  default value is '#score_board'.
+            genSpeed: 400,
+            maxCallback: function () {
+                $.sDialog({
+                    skin: 'red',
+                    content: "红包已经领完了，分享给好友+10分！",
+                    okBtn: false,
+                    cancelBtn: false
+                });
+            }
+        });
+        // 启动整点红包雨游戏
+        myRain.start();*/
+        //r.updateScore('set', r.score + 10);// 分享完后加 10分 的代码
+
+        // 倒计时
+        function startCountdown(time) {
+            $('#countdown_dlg__con').countDown({
+                timeInSecond: time, // 要倒计时的时间，秒为单位
+                callback: function () { // 倒计时完后执行的回调函数
+                    $('#countdown_dlg').fadeOut();
+                    myRain = new rain({ // 初始化整点红包雨游戏
+                        container: '#game_board',
+                        scoreBoard: '#score_board',
+                        genSpeed: 600,
+                        maxScore: 150,
+                        maxClickTimes: 100,
+                        isWatchMode: false,
+                        onWatchClick: function () {
+                            $.sDialog({
+                                skin: 'block',
+                                content: "亲，每天只能玩一次哦！",
+                                okBtn: false,
+                                cancelBtn: false
+                            });
+                        },
+                        maxClickTimesCallback: function () {
+                            $.sDialog({
+                                skin: 'block',
+                                content: "红包已经领完了，分享给好友+10分！",
+                                okBtn: false,
+                                cancelBtn: false,
+                                onDestroy: function () {
+                                    $('#countdown_dlg').fadeIn();
+                                    var date = new Date();
+                                    var hour = date.getHours();
+                                    if (hour <= 11) {
+                                        hour = 11 - hour;
+                                    } else {
+                                        hour = 12 + 23 - hour;
+                                    }
+                                    startCountdown(hour * 60 * 60 + (59 - date.getMinutes()) * 60 + (60 - date.getSeconds())); // 重新开始倒计时
+                                }
+                            });
+                        },
+                        maxScoreCallback: function () {
+                            $.sDialog({
+                                skin: 'block',
+                                content: "哇咔咔~150分到手，明天继续！分享给好友+10分！",
+                                okBtn: false,
+                                cancelBtn: false,
+                                onDestroy: function () {
+                                    $('#countdown_dlg').fadeIn();
+                                    var date = new Date();
+                                    var hour = date.getHours();
+                                    if (hour <= 11) {
+                                        hour = 11 - hour;
+                                    } else {
+                                        hour = 12 + 23 - hour;
+                                    }
+                                    startCountdown(hour * 60 * 60 + (59 - date.getMinutes()) * 60 + (60 - date.getSeconds())); // 重新开始倒计时
+                                }
+                            });
+                        }
+                    });
+                    // 启动整点红包雨游戏
+                    myRain.start();
+                }
+            });
+        }
+        startCountdown(parseInt($('#countdown_dlg__con').attr('data-time'))); // 开始倒计时
+        // 规则弹窗
+        $('#rule_btn').click(function () {
+            $('#rule_dlg').removeClass('hide');
+        });
+        $('#rule_dlg__close').click(function () {
+            $('#rule_dlg').addClass('hide');
+        });
+
+        // 打开兑换弹窗
+        function showExchangeDlg(score) { // score是要兑换的分数
+            var This = $('#exchange_dlg'),
+                couponVal = 0;
+            This.find('#current_score').html(score);
+            if (score > 10) {
+                couponVal = parseInt(score / 10);
+                This.find('#exchange_val_1').html(couponVal);
+                This.find('#exchange_val_2').html(couponVal);
+            } else {
+                This.addClass('disabled');
+            }
+            This.removeClass('hide');
+        }
+        function closeExchangeDlg() {
+            var This = $('#exchange_dlg'),
+                couponVal = This.find('#exchange_val_1').html();
+            This.find('#current_score').html(0)
+            This.find('#exchange_val_1').html(0);
+            This.find('#exchange_val_2').html(0);
+            This.removeClass('disabled').addClass('hide');
+            return couponVal;
+        }
+        function showExchangeResult(type, val) { // type: 0失败, 1成功
+            if (type == 0) {
+                $.sDialog({
+                    skin: 'red',
+                    content: "网络繁忙，请稍后再试",
+                    okBtn: false,
+                    cancelBtn: false
+                });
+            } else {
+                if (type == 1) {
+                    var This = $('#success_dlg');
+                    This.find('#success_val').html(val);
+                    This.removeClass('hide');
+                }
+            }
+        }
+        $('#exchange_btn').click(function () { // 点击兑换按钮
+            var score = parseInt($('#score').text());
+            showExchangeDlg(score);
+        });
+        $('#exchange_dlg__close').click(function () {
+            closeExchangeDlg();
+        });
+        $('#exchange_dlg__btn').click(function () { // 点击确认兑换按钮
+            // 这里处理异步兑换
+            // 兑换成功
+            showExchangeResult(1, closeExchangeDlg());// 显示兑换结果
+            myRain.stop();
+        });
+        $('#success_dlg__close').click(function () {
+            var This = $('#success_dlg');
+            This.find('#success_val').html(0);
+            This.addClass('hide');
+        });
+
+
+    });
+</script>
+<script async src="../../busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></body>  
+
+<!-- Mirrored from www.iampua.com/pui/coupon-rain.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Dec 2018 06:32:12 GMT -->
+</html>
