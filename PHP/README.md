@@ -5,6 +5,20 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP检查字符串的函数
+###
+```PHP
+ctype_alnum($text); //检查是否是字母或数字或字母数字的组合
+ctype_alpha($text); //检查字符串是否是字母
+ctype_cntrl($text); //是否是控制字符如\n,\r,\t
+ctype_digit($text); //是否是数字表示的字符
+ctype_graph($text); //检查是否有任何可打印字符，除了空格（补）
+ctype_lower($text); //检查是否是小写字母
+ctype_upper($text); //检查是否是大写字母
+ctype_space($text); //是否是空白字符
+is_numeric($text);  //检查是否是数字
+```
+
 # PHP生成随机6位密码
 ###
 ```PHP
