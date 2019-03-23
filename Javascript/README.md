@@ -138,3 +138,27 @@ console.log(unique(str_arr))
 var str = "123";
 console.log(str.indexOf("3")!=-1);
 ```
+
+# JS获取当前域名
+```Javascript
+var domain = document.domain;
+```
+
+# JS获取当前Url
+```Javascript
+var url = window.location.href;
+```
+
+# JS获取当前相对路径
+```Javascript
+function GetUrlRelativePath(){
+	var url = document.location.toString();
+	var arrUrl = url.split("//");
+	var start = arrUrl[1].indexOf("/");
+	var relUrl = arrUrl[1].substring(start);
+	if(relUrl.indexOf("?") != -1){
+		relUrl = relUrl.split("?")[0];
+	}
+	return relUrl;
+}
+```
