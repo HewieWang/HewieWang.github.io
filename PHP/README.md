@@ -5,7 +5,7 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
-# PHP读取txt文件从N行到M行函数,返回字符串
+# PHP读取TXT文件从N行到M行函数,返回字符串
 ###
 ```PHP
 function get_lines($file_name,$start,$limit){
@@ -17,6 +17,25 @@ function get_lines($file_name,$start,$limit){
 	  $f->next();
 	}
 	return $ret;
+}
+```
+
+# PHP高效率的读取TXT大文件行数
+###
+```PHP
+function count_line($file){
+  $fp=fopen($file, "r");
+  $i=0;
+  while(!feof($fp)) {
+   //每次读取2M
+   if($data=fread($fp,1024*1024*2)){
+   //计算读取到的行数
+   $num=substr_count($data,"\n");
+   $i+=$num;
+  }
+}
+fclose($fp);
+return $i;
 }
 ```
 
