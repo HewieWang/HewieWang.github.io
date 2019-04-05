@@ -39,6 +39,26 @@ return $i;
 }
 ```
 
+# PHP生成服务器信息函数
+###
+```PHP
+function get_server_info(){
+    $info = array(
+        '运行环境'=>PHP_OS.':'.$_SERVER["SERVER_SOFTWARE"],
+        'WEB服务端口'=>$_SERVER['SERVER_PORT'],
+        '浏览器信息'=>substr($_SERVER['HTTP_USER_AGENT'], 0, 40),
+        '通信协议'=>$_SERVER['SERVER_PROTOCOL'],
+        '请求方法'=>$_SERVER['REQUEST_METHOD'],
+        '上传附件限制'=>ini_get('upload_max_filesize'),
+        '执行时间限制'=>ini_get('max_execution_time').'秒',
+        '服务器时间'=>date("Y年n月j日 H:i:s"),
+        '服务器域名/IP'=>$_SERVER['SERVER_NAME'].' [ '.gethostbyname($_SERVER['SERVER_NAME']).' ]',
+        '用户IP地址'=>$_SERVER['REMOTE_ADDR'],
+    );
+    return $info;
+}
+```
+
 # PHP检查字符串的函数
 ###
 ```PHP
