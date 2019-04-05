@@ -5,6 +5,21 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP读取txt文件从N行到M行函数,返回字符串
+###
+```PHP
+function get_lines($file_name,$start,$limit){
+	$f = new SplFileObject( $file_name,'r');
+	$f->seek($start);
+	$ret = "";
+	for( $i = 0 ; $i < $limit ; $i++ ){
+	  $ret .= $f->current();
+	  $f->next();
+	}
+	return $ret;
+}
+```
+
 # PHP检查字符串的函数
 ###
 ```PHP
@@ -34,6 +49,15 @@ function GetRandStr($length){
 }
 $number=GetRandStr(6);
 echo $number;
+```
+
+# PHP保留两位小数(不四舍五入)
+###
+```PHP
+function FA($a){
+  $result = intval($a * pow(10, 2))/ pow(10, 2);
+  return $result;
+}
 ```
 
 # PHP给每一行文本加引号,逗号
