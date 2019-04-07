@@ -5,6 +5,12 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP将数组值转换为小写
+###
+```PHP
+$yourArray = array_map('strtolower', $yourArray);
+```
+
 # PHP判断字符串是否在TXT中(按行)(黑名单)
 ###
 ```PHP
