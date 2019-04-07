@@ -5,6 +5,22 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP判断字符串是否在TXT中(按行)(黑名单)
+###
+```PHP
+$file = fopen("1.txt", "r");
+$user=array();
+$i=0;
+while(!feof($file)){$user[$i]= fgets($file);$i++;}
+fclose($file);
+$user=array_filter($user);
+foreach ($user as $k => $v) {
+	 if(trim($v)=="999"){
+	 	echo '在列表中!';exit;
+	 }
+}
+```
+
 # PHP读取TXT文件从N行到M行函数,返回字符串
 ###
 ```PHP
