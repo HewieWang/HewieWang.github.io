@@ -13,6 +13,7 @@
 
 * [PCHunter(Windows 下如何查看快捷键被哪个程序占用了)](http://www.pc6.com/softview/SoftView_87144.html)
 * [Snipaste(强大的截图工具可替换QQ截图)](https://zh.snipaste.com/index.html#)
+* [AngryIPScanner(IP扫描器)](https://angryip.org/)
 
 ### 在线工具
 
