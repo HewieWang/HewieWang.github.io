@@ -28,3 +28,8 @@ mv test.log test1.txt
 ```Bash
 sudo su
 ```
+# 修改root密码
+###
+```Bash
+passwd
+```
