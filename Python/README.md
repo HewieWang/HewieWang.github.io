@@ -14,3 +14,10 @@ chromeOptions = webdriver.ChromeOptions()<br>
 chromeOptions.add_argument("--proxy-server=http://202.20.16.82:10152")
 ##### 一定要注意，=两边不能有空格，不能是这样--proxy-server = http://202.20.16.82:10152
 browser = webdriver.Chrome(chrome_options = chromeOptions)
+
+### centos 7 安装 pip
+```Python
+yum -y install epel-release
+yum install python-pip
+pip install --upgrade pip
+```
