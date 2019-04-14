@@ -33,3 +33,10 @@ sudo su
 ```Bash
 passwd
 ```
+# Linux联网用vi编辑文件/etc/sysconfig/network-scripts/ifcfg-eth0
+###
+```Bash
+BOOTPROTO=dhcp（没变）
+ONBOOT=yes（修改之前是no）
+NM_CONTROLLED=no（修改之前是yes）
+```
