@@ -1,0 +1,9 @@
+/cgi-bin/
+/images/
+/img/
+/img/
+/img_top/
+/img/index/
+/img_osusume/
+/img_osusume/img/
+/files/
