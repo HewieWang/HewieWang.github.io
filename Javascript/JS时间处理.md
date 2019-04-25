@@ -26,3 +26,11 @@ var s = date.getSeconds() < 10 ? ('0' + date.getseconds()) : date.getSeconds()
 var formatwdate = y+'-'+m+'-'+d + " " + h + ":" + f + ":" + s;
 console.log('formatwdate', formatwdate)
 ```
+## JS暂停5秒
+```Javascript
+function sleep(d){
+  for(var t = Date.now();Date.now() - t <= d;);
+}
+
+sleep(5000); //当前方法暂停5秒
+```
