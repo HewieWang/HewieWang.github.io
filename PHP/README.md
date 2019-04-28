@@ -5,6 +5,15 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP随机调用TXT文件中某两行
+###
+```PHP
+$arr = explode("\n", file_get_contents('1.txt'));
+$key = array_rand($arr, 2);
+echo $arr[$key[0]];
+echo $arr[$key[1]];
+```
+
 # PHP将数组值转换为小写
 ###
 ```PHP
