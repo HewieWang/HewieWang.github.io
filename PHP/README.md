@@ -5,6 +5,17 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP随机调用TXT文件中一行
+###
+```PHP
+$f='1.txt';//文件名
+$a=file($f);//把文件的所有内容获取到数组里面
+$n=count($a);//获得总行数
+$rnd=rand(0,$n);//产生随机行号
+$rnd_line=$a[$rnd];//获得随机行
+echo $rnd_line; //显示结果
+```
+
 # PHP随机调用TXT文件中某两行
 ###
 ```PHP
