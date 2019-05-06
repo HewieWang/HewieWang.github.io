@@ -25,6 +25,34 @@ echo $arr[$key[0]];
 echo $arr[$key[1]];
 ```
 
+# PHP随机调用中文字符串
+###
+```PHP
+function mb_str_shuffle($str){
+    $str_hz = preg_replace('/[^\x{4e00}-\x{9fa5}]/u', '', $str);
+    $str_zm = preg_replace('/([\x80-\xff]*)/i','',$str);
+    $re1 = chunk_split($str_hz,3,",");
+    $re2 = chunk_split($str_zm,1,",");
+    if($re1){
+        $re1 = explode(",",$re1);
+    }
+    if($re2){
+        $re2 = explode(",",$re2);
+    }
+    if($re1 && $re2){
+        $re = array_merge($re1,$re2);
+    }elseif($re1){
+        $re = $re1;
+    }elseif($re2){
+        $re = $re2;
+    }
+    shuffle($re);
+    $newstr = implode($re);
+    $newstr=mb_substr($newstr,0,rand(0,count($re)-1),'utf-8');
+    return $newstr;
+}
+```
+
 # PHP将数组值转换为小写
 ###
 ```PHP
