@@ -5,6 +5,12 @@ curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的�
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
 
+# PHP 截取某个字符之前的字符串
+###
+```PHP
+$newa = substr($str,0,strrpos($str,'$'));
+```
+
 # PHP随机调用TXT文件中一行
 ###
 ```PHP
