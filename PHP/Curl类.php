@@ -206,3 +206,7 @@ class HttpCurl {
         }
     }
 }
+
+
+//使用实例
+//echo (new HttpCurl())->setParams(['name' => 'dfh', 'age' => 12])->get('http://www.test.com');
