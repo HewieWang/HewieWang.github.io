@@ -25,3 +25,8 @@ yum -y install epel-release
 yum install python-pip
 pip install --upgrade pip
 ```
+### ChromeDirver下载地址
+```Python
+http://chromedriver.storage.googleapis.com/index.html
+对应关系:https://sites.google.com/a/chromium.org/chromedriver/downloads
+```
