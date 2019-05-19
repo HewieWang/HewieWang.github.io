@@ -8,6 +8,10 @@ str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
 ```Python
 num = ''.join(str(i) for i in random.sample(range(0,9),9))
 ```
+### Pyinstaller打包为EXE
+```Python
+pyinstaller -F -w demo.py
+```
 ### selenium代理设置
 ```Python
 chromeOptions = webdriver.ChromeOptions()<br>
