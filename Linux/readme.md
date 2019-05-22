@@ -8,6 +8,11 @@ scp -r root@45.118.250.225:/www/wwwroot/www.tar.gz /c/Users/Administrator/Deskto
 ```Bash
 tar -czvf www.tar.gz /www
 ```
+# Linux解压压缩包
+###
+```Bash
+tar -zxvf www.tar.gz
+```
 # 移动文件
 ###
 ```Bash
