@@ -4,7 +4,11 @@
 curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的正文
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
-
+# PHP 去掉字符串最后一个字符
+###
+```PHP
+$newstr = substr($str,0,strlen($str)-1);
+```
 # PHP 截取某个字符之前的字符串
 ###
 ```PHP
