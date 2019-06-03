@@ -1,7 +1,10 @@
 # 有用的VBS代码
-
+### IIS7重启应用程序池
+```Batch
+c:\windows\system32\inetsrv\AppCmd.exe stop apppool /apppool.name:"ASP.NET v4.0"
+c:\windows\system32\inetsrv\AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
+```
 ### 生成固定位随机字符串
-
 Dim StrA, i, Sh<br>
 StrA = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuiopasdfghjklzxcvbnm"<br>
 Set Sh = CreateObject("WScript.Shell")<br>
