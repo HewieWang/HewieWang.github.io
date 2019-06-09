@@ -4,6 +4,17 @@
 c:\windows\system32\inetsrv\AppCmd.exe stop apppool /apppool.name:"ASP.NET v4.0"
 c:\windows\system32\inetsrv\AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
 ```
+### bat每隔一段时间（例如15分钟）运行一次某python文件
+```Batch
+@echo off  
+set INTERVAL=900
+timeout %INTERVAL%
+:Again  
+echo Called000000000000000
+python C:/test.py 
+timeout %INTERVAL%
+goto Again
+```
 ### 生成固定位随机字符串
 Dim StrA, i, Sh<br>
 StrA = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuiopasdfghjklzxcvbnm"<br>
