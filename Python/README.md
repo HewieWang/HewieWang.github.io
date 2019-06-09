@@ -8,6 +8,15 @@ str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
 ```Python
 num = ''.join(str(i) for i in random.sample(range(0,9),9))
 ```
+### 生成随机姓名
+```Python
+import random
+xing='赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜'
+ming='豫章故郡洪都新府星分翼轸地接衡庐襟三江而带五湖'
+X=random.choice(xing)
+M="".join(random.choice(ming) for i in range(2))
+print(X+M)
+```
 ### Pyinstaller打包为EXE
 ```Python
 pyinstaller -F -w demo.py
