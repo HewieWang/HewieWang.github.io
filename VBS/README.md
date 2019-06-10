@@ -4,6 +4,10 @@
 c:\windows\system32\inetsrv\AppCmd.exe stop apppool /apppool.name:"ASP.NET v4.0"
 c:\windows\system32\inetsrv\AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
 ```
+### bat结束进程
+```Batch
+taskkill /f /im Explorer.exe
+```
 ### bat每隔一段时间（例如15分钟）运行一次某python文件
 ```Batch
 @echo off  
