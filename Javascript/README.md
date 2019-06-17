@@ -13,7 +13,16 @@ $.ajax({
   }
 })
 ```
-
+# JQ轮流点击
+```Javascript
+var i=0;
+$(".one").click(function() {
+if(i==0){
+alert(1);i=1;
+}else{
+alert(2);i=0;
+}});
+```
 # JS生成随机 N 位数字
 ```Javascript
 function randomNum(n){
