@@ -4,6 +4,10 @@
 c:\windows\system32\inetsrv\AppCmd.exe stop apppool /apppool.name:"ASP.NET v4.0"
 c:\windows\system32\inetsrv\AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
 ```
+### 在指定的时间执行
+```Batch
+at 9:00PM /every:m,t,w,th,f,s,su  "E:\具体路径\run.bat"
+```
 ### bat结束进程
 ```Batch
 taskkill /f /im Explorer.exe
