@@ -19,10 +19,10 @@ class RClient(object):
         self.soft_id = soft_id
         self.soft_key = soft_key
         self.base_params = {
-            'username': 'ningbufan',
-            'password': '992584464',
+            'username': 'xxxxxxxxx',
+            'password': 'xxxxxxxxx',
             'softid': '1',
-            'softkey': 'b40ffbee5c1cf4e38028c197eb2fc751',
+            'softkey': 'xxxxxxxxx',
         }
         self.headers = {
             'Connection': 'Keep-Alive',
