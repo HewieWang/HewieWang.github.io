@@ -1,0 +1,37 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502557" version="2.9.2" charset="gb2312" type="2" hash="893f5f8e60e5c3b2dcb21ace28e6c241">{dede:charset}utf-8{/dede:charset}{dede:list}http://www.9toutiao.com/yingyang/{/dede:list}{dede:page}http://www.9toutiao.com/yingyang/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="article-content">
+[内容]
+<div class="followcon1">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502557" version="2.9.2" charset="gb2312" type="2" hash="cc5b403a385097a6194e85675262e020">{dede:charset}utf-8{/dede:charset}{dede:list}http://www.9toutiao.com/yangsheng/{/dede:list}{dede:page}http://www.9toutiao.com/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="article-content">
+[内容]
+<div class="followcon1">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502557" version="2.9.2" charset="gb2312" type="2" hash="a5695bd8efe04609f15033eb9c391aaa">{dede:charset}utf-8{/dede:charset}{dede:list}http://yangsheng.gmw.cn/{/dede:list}{dede:page}http://yangsheng.gmw.cn/(*)/(*)/content_(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="u-mainText">
+[内容]
+<!--文章正文 end-->{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502557" version="2.9.2" charset="gb2312" type="2" hash="dbebfa97ec32943e50686b79efc77dd6">{dede:charset}utf-8{/dede:charset}{dede:list}http://www.jkb.com.cn/healthyLiving/{/dede:list}{dede:page}http://www.jkb.com.cn/healthyLiving/(*)/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="content">
+[内容]
+<div id="nc_page">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>

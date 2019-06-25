@@ -1,0 +1,15 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502563" version="2.9.2" charset="gb2312" type="2" hash="4e4d02470006372c80669f8d26ebe578">{dede:charset}utf-8{/dede:charset}{dede:list}http://www.southei.com/{/dede:list}{dede:page}http://www.southei.com/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="m-c-con fmiddle">
+[内容]
+<div class="m-c-share">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：关键词规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502563" version="2.9.2" charset="gb2312" type="0" hash="0c4971e9b540ae3c3ba4de51c0eb5ca5">集团,公司,科技</data>

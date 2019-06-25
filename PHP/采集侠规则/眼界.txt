@@ -1,0 +1,15 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502538" version="2.9.2" charset="gb2312" type="2" hash="f6df13f28df6f93e9eb1a459cd2fa1f7">{dede:charset}utf-8{/dede:charset}{dede:list}http://news.southcn.com/china/default.htm{/dede:list}{dede:page}http://news.southcn.com/china/content/(*)/(*)/(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="content" id="content">
+[内容]
+<!--/enpcontent-->{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：关键词规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502538" version="2.9.2" charset="gb2312" type="0" hash="2fc5e9ad429ca21b3400a21fe470244b">关注,焦点,人物</data>

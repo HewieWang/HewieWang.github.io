@@ -1,0 +1,37 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502554" version="2.9.2" charset="gb2312" type="2" hash="357bbb95620d64c1a92a5ba172154575">{dede:charset}gb2312{/dede:charset}{dede:list}http://war.163.com/{/dede:list}{dede:page}http://war.163.com/(*)/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="post_text" id="endText" style="border-top:1px solid #ddd;">
+[内容]
+<div class="gg200x300">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502554" version="2.9.2" charset="gb2312" type="2" hash="9634358d9d6cef36edef117b79169f3d">{dede:charset}gb2312{/dede:charset}{dede:list}http://war.163.com/{/dede:list}{dede:page}http://war.163.com/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="post_text" id="endText" style="border-top:1px solid #ddd;">
+[内容]
+<div class="gg200x300">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502554" version="2.9.2" charset="gb2312" type="2" hash="b2224f478fcf2c48d6392982e464fdc3">{dede:charset}utf-8{/dede:charset}{dede:list}http://military.people.com.cn/{/dede:list}{dede:page}http://military.people.com.cn/(*)/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="clearfix w1000_320 text_con">
+[内容]
+<div class="zdfy clearfix">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502554" version="2.9.2" charset="gb2312" type="2" hash="543bbd74aa33073f9b2c92a91dbcf8e9">{dede:charset}utf-8{/dede:charset}{dede:list}http://www.81.cn/{/dede:list}{dede:page}http://www.81.cn/(*)/(*)/(*)/content_(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<!--文章正文-->
+[内容]
+<!--HTMLBOX-->{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>

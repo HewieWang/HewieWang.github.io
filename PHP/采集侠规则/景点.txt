@@ -1,0 +1,15 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502570" version="2.9.2" charset="gb2312" type="2" hash="77ba0a1dc066337f9f3c92477d2d204d">{dede:charset}utf-8{/dede:charset}{dede:list}http://travel.southcn.com/{/dede:list}{dede:page}http://travel.southcn.com/l/(*)/(*)/(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="content" id="content">
+[内容]
+<!--/enpcontent-->{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：关键词规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502570" version="2.9.2" charset="gb2312" type="0" hash="5caa9311a495b42f0d27ef3d831f9954">旅游,假期,名胜古迹,风景,海</data>

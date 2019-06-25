@@ -1,0 +1,77 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="b5f8ea4a348c2c894736ee3878863a40">http://rss.huanqiu.com/topnews.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="c7eb2c6f2d2e40c9ba4a9c815f1ebf89">http://rss.huanqiu.com/world/hot.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="e27c97c423c9fed72a62eea7d0dddcb9">http://rss.huanqiu.com/world/well_read.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="db16f3b23bdb581b7c4589a5ebf6d5c7">http://rss.huanqiu.com/mil/world.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="7ae9f191b68c6a80b379bae1fef7ce42">http://rss.huanqiu.com/mil/paper.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="cd06f716365b35671fc2971a646b0c67">http://rss.huanqiu.com/mil/Focus_photo.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="f9a678a0fefa512ea020fdbd057229b1">http://rss.huanqiu.com/tech/discovery.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="1" hash="380af11c8e9f28904240a84e6bd1821f">http://rss.huanqiu.com/finance/world.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="2" hash="879725123ae0ef7979efe375960ad96a">{dede:charset}gb2312{/dede:charset}{dede:list}http://www.jiangbeinet.com/html/4/[2-24].htm{/dede:list}{dede:page}http://www.jiangbeinet.com/html/4-17/(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="article-toolbar">[内容]<div class="article-page">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：关键词规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502533" version="2.9.2" charset="gb2312" type="0" hash="bfb7e4bc77973e3e82efcc1139937833">国际,美国,阿富汗,中东,军事,特朗普,国务卿,FBI,联邦</data>

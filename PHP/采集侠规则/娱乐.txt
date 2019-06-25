@@ -1,0 +1,7 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502542" version="2.9.2" charset="gb2312" type="2" hash="f3e9101ba114f3fbfc1717af4f14f6a6">{dede:charset}gb2312{/dede:charset}{dede:list}http://www.yoka.com/{/dede:list}{dede:page}http://www.yoka.com/(*)/(*)/(*)/(*)/(*).shtml{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="textCon">
+[内容]
+<div class="navTag">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>

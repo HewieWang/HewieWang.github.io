@@ -1,0 +1,15 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：rss规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502546" version="2.9.2" charset="gb2312" type="1" hash="cba7dacc1034b9aad5c9c7e0e4bea8f6">http://www.chinanews.com/rss/it.xml</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502546" version="2.9.2" charset="gb2312" type="2" hash="ef4d42a1c2bd92bfcad6259f6257aab5">{dede:charset}gb2312{/dede:charset}{dede:list}http://tech.163.com/{/dede:list}{dede:page}http://tech.163.com/(*)/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<p class="f_center">
+[内容]
+<div class="ep-source cDGray">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>

@@ -1,0 +1,7 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502550" version="2.9.2" charset="gb2312" type="2" hash="ae43a2c956176420be894cd9de240205">{dede:charset}utf-8{/dede:charset}{dede:list}http://health.hebnews.cn/{/dede:list}{dede:page}http://health.hebnews.cn/(*)/(*)/content_(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<!--enpcontent-->
+[内容]
+<div class="editor">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>

@@ -1,0 +1,27 @@
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502567" version="2.9.2" charset="gb2312" type="2" hash="7a8ada008e6e65fbaa2d14da22cf67f7">{dede:charset}gb2312{/dede:charset}{dede:list}http://www.cnedunews.com/{/dede:list}{dede:page}http://www.cnedunews.com/(*)/(*)/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class="text" id="text">
+[内容]
+<div class="page">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502567" version="2.9.2" charset="gb2312" type="2" hash="a191a8858b7a7b2c1c419b8b13ab22ab">{dede:charset}utf-8{/dede:charset}{dede:list}http://news.juesheng.com/{/dede:list}{dede:page}http://news.juesheng.com/a/(*).html{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<div class='content-box'>
+[内容]
+<div class="baike-list-wrap" id="baikelistWrap">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
+
+---
+
+#采集规则适用程序：采集侠
+#采集侠官方网站：http://www.caijixia.net
+#规则类型：定向采集规则
+#生成时间：2019-04-17 20:02
+<data timestamp="1555502567" version="2.9.2" charset="gb2312" type="2" hash="f4f969d7a981211ae6fe7f8f4de8b2c6">{dede:charset}utf-8{/dede:charset}{dede:list}http://edu.youth.cn/{/dede:list}{dede:page}http://edu.youth.cn/(*)/(*)/(*)/(*).htm{/dede:page}{dede:titlerule}{/dede:titlerule}{dede:authorrule}{/dede:authorrule}{dede:sourcerule}{/dede:sourcerule}{dede:bodyrule}<DIV id=content>
+[内容]
+<div class="rdwz">{/dede:bodyrule}{dede:fyrule}{/dede:fyrule}</data>
