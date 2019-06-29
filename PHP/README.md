@@ -4,6 +4,20 @@
 curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的正文
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
+# PHP7 生成指定位数随机字符串
+###
+```PHP
+function str_rand($length = 32, $char = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+    if(!is_int($length) || $length < 0) {
+        return false;
+    }
+    $string = '';
+    for($i = $length; $i > 0; $i--) {
+        $string .= $char[mt_rand(0, strlen($char) - 1)];
+    }
+    return $string;
+}
+```
 # PHP 去掉字符串最后一个字符
 ###
 ```PHP
