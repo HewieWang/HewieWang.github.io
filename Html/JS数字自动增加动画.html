@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JS数字自动增加动画</title>
+    </head>
+    <body>
+        <h1 id="time">0</h1>
+        <script>
+            function NumAutoPlusAnimation(targetEle, options) {
+                options = options || {};
+                var $this = document.getElementById(targetEle),
+                    time = options.time || $this.data('time'),
+                    finalNum = options.num || $this.data('value'),
+                    regulator = options.regulator || 100, //调速器，改变regulator的数值可以调节数字改变的速度
+                    step = finalNum / (time / regulator),
+                    count = 0, //计数器
+                    initial = 0;
+                    var timer = setInterval(function() {
+                    count = count + step;
+                    if(count >= finalNum) {
+                        clearInterval(timer);
+                        count = finalNum;
+                    }
+                    var t = Math.floor(count);
+                    if(t == initial) return;
+                    initial = t;
+                    $this.innerHTML = initial;
+                }, 30);
+            }
+            NumAutoPlusAnimation("time", {
+                time: 1500,
+                num: 60,
+                regulator: 50
+            })
+        </script>
+ 
+    </body>
+ 
+</html>

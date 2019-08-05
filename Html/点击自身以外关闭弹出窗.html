@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jq点击自身以外关闭弹出窗</title>
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    #branch {
+      width: 100%;
+      height: auto;
+    }
+
+    /* 按钮 */
+    #branch .branch-header button {
+      margin: 300px 600px;
+    }
+
+    /* 弹出框 */
+    #branch .branch-proup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: 5px 5px 0 0;
+      display: none;
+      z-index: 10;
+    }
+
+    #branch .branch-proup-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: -160px;
+      margin-left: -160px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="branch">
+    <div class="branch-header">
+      <button>点击出现弹出框</button>
+    </div>
+    <!-- 弹出框 -->
+    <div class="branch-proup">
+      <div class="branch-proup-content">
+        <!-- 弹出框内容 -->
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $(function () {
+      var btn = $('#branch .branch-header button');
+      var proup = $('#branch .branch-proup');
+      btn.click(function () {
+        proup.show();
+      })
+      $('#branch .branch-proup').on('click', function (e) {
+        if ($(e.target).closest('#branch .branch-proup-content').length > 0) {
+        } else {
+          proup.hide()
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>
