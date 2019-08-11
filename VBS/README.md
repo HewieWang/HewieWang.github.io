@@ -12,6 +12,10 @@ at 9:00PM /every:m,t,w,th,f,s,su  "E:\具体路径\run.bat"
 ```Batch
 taskkill /f /im Explorer.exe
 ```
+### windows下cmd下载文件
+```Batch
+certutil.exe -urlcache -split -f https://1251671073/test.txt filename.txt
+```
 ### bat每隔一段时间（例如15分钟）运行一次某python文件
 ```Batch
 @echo off  
@@ -24,22 +28,23 @@ timeout %INTERVAL%
 goto Again
 ```
 ### 生成固定位随机字符串
-Dim StrA, i, Sh<br>
-StrA = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuiopasdfghjklzxcvbnm"<br>
-Set Sh = CreateObject("WScript.Shell")<br>
-Function MakeStr (L)<br>
-Dim i<br>
-MakeStr = ""<br>
-For i = 0 To L<br>
-Randomize<br>
-MakeStr = MakeStr & Mid(StrA, Int(Rnd() * Len(StrA)) + 1, 1)<br>
-Next<br>
-End Function<br>
+```Batch
+Dim StrA, i, Sh
+StrA = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuiopasdfghjklzxcvbnm"
+Set Sh = CreateObject("WScript.Shell")
+Function MakeStr (L)
+Dim i
+MakeStr = ""
+For i = 0 To L
+Randomize
+MakeStr = MakeStr & Mid(StrA, Int(Rnd() * Len(StrA)) + 1, 1)
+Next
+End Function
 
-使用：(生成7位随机字符串)<br>
+使用：(生成7位随机字符串)
 
 MakeStr(7)
-
+```
 ### VBS对文件文件夹操作的例子
 * 创建文件夹
 ```VBScript
