@@ -1,0 +1,34 @@
+<bdo dir="rtl">该段落文字从右到左显示。</bdo>
+
+<del>删除</del>
+
+<p contenteditable="true">这是一个段落。是可编辑的。尝试修改文本。</p>
+
+<script type="text/javascript">
+function upperCase()
+{
+	var x=document.getElementById("fname").value
+	document.getElementById("fname").value=x.toUpperCase()
+}
+</script>
+输入你的英文姓名（鼠标移开后小写会转换为大写）: <input type="text" name="fname" id="fname" onblur="upperCase()">
+
+<script>
+function showMsg(){alert("你选取了一些文本信息!");}
+</script>
+<input type="text" value="选取我!!" onselect="showMsg()">
+
+<script>
+function newDoc(){
+    window.location.assign("http://www.runoob.com")
+}
+</script>
+<input type="button" value="加载新文档" onclick="newDoc()">
+
+响应式图片
+<style type="text/css">
+img {
+    max-width: 100%;
+    height: auto;
+}
+</style>
