@@ -29,6 +29,14 @@ function getRandomArrayElements(arr, count) {
 var items = ['1','2','4','5','6','7','8','9','10'];
 console.log( getRandomArrayElements(items, 4) );
 ```
+# 禁用右键和F12
+```Javascript
+document.oncontextmenu = new Function("return false;");
+document.onkeydown = document.onkeyup = document.onkeypress = function(event) {
+	var e = event || window.event || arguments.callee.caller.arguments[0];
+	if (e && e.keyCode == 123) {e.returnValue = false;return (false);}
+}
+```
 # JQ轮流点击
 ```Javascript
 var i=0;
