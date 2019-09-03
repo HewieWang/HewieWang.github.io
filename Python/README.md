@@ -12,6 +12,11 @@ num = ''.join(str(i) for i in random.sample(range(0,9),9))
 ```Python
 time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
 ```
+### Tkinter
+```Python
+user = filedialog.askopenfilename()    ###打开文件,user返回文件路径
+self.Text1.insert(INSERT,user)         ###向编辑器插入内容
+```
 ### 生成随机姓名
 ```Python
 import random
