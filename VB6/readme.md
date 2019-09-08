@@ -39,3 +39,26 @@ postData = GetFile("urls.txt")
 r = winHttpGetResponse(url, postData, "POST", "")
 MsgBox (r)
 ```
+### 打开选择文件
+```Batch
+Private Sub Command1_Click()
+' 设置“CancelError”为 True
+    CommonDialog1.CancelError = True
+    On Error GoTo ErrHandler
+    ' 设置标志
+    CommonDialog1.Flags = cdlOFNHideReadOnly
+    ' 设置过滤器
+    CommonDialog1.Filter = "All Files (*.*)|*.*|Text Files" & _
+    "(*.txt)|*.txt"
+    ' 指定缺省的过滤器
+    CommonDialog1.FilterIndex = 2
+    ' 显示“打开”对话框
+    CommonDialog1.ShowOpen
+    ' 显示选定文件的名字
+    MsgBox CommonDialog1.FileName '显示路径
+    Exit Sub
+ErrHandler:
+    ' 用户按了“取消”按钮
+    Exit Sub
+End Sub
+```
