@@ -62,3 +62,12 @@ ErrHandler:
     Exit Sub
 End Sub
 ```
+### 按行读取TXT
+```Batch
+Open "\1.txt" For Binary As #1
+    Do While Loc(1) <> LOF(1)
+        Line Input #1, strTest
+        msgbox(strTest)
+    Loop
+    Close
+```
