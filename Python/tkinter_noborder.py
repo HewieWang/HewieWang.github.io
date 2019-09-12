@@ -12,7 +12,7 @@ label=tkinter.Label(win,text="Hello Python",font=('宋体',50))
 label2=tkinter.Label(win,text="What u want?",font=('宋体',50))
 label.pack()
 label2.pack()
-T=tkinter.Entry(width=50,font=('宋体',50)) #创建文本框
+T=tkinter.Entry(width=50,font=('宋体',50))
 T.pack()
 def getMe():
 	ps=T.get()
