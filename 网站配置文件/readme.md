@@ -10,3 +10,12 @@ net start mysql
 ```Bash
 at 04:00 c:\apacheautostart.bat
 ```
+### web.config设置目录只读，不能执行PHP
+```Bash
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <handlers accessPolicy="Read" />
+    </system.webServer>
+</configuration>
+```
