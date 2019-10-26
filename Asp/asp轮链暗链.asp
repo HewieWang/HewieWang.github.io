@@ -1,4 +1,5 @@
 <%
+Randomize
 function MyRandc(n)
 dim thechr 
 thechr = "" 
