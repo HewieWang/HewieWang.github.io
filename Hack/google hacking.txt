@@ -1,0 +1,54 @@
+intitle:     从网页标题中搜索指定的关键字,可专门用来搜索指定版本名称的各类web程序,也可用allintitle
+inurl: 	     从url中搜索指定的关键字,可专门用来构造各种形式的漏洞url,也可用allinurl
+intext:      从网页中搜索指定的关键字,经常会用它来穿透到漏洞页面……也可用allintext
+filetype:    搜索指定的文件后缀,例如:sql mdb txt bak backup ini zip rar doc xls…… 
+site:        在某个特定的网站内中搜索指定的内容
+link:        搜索和该链接有关联的链接,比如:友情链接
+index of:    找目录遍历时也许会用到
+
+inurl:/phpMyAdmin/index.php 
+inurl:/phpMyAdmin/index.php db+information_schema   	指定命中数据
+inurl:/phpMyAdmin/index.php intext:phpMyAdmin 2.7.0 	直接针对特定版本号去搜索,更加精准
+inurl:/phpMyAdmin/index.php site:*.tw
+inurl:/phpMyAdmin/index.php site:*.org
+inurl:/phpMyAdmin/index.php site:*.hk
+
+inurl:admin_login.php intitle:admin page
+inurl:/admin/login.php site:*.tw
+inurl:/admin/index.php site:*.tw
+inurl:/system/adminlogin.asp  site:*.tw
+inurl:/manage/login.aspx  site:*.tw
+inurl:/sysadm/index.php  site:*.com
+
+ftp 账号密码:
+"index of/" "ws_ftp.ini" "parent directory"
+"your password is" filetype:log
+filetype:ini inurl:"serv-u.ini"
+filetype:ini inurl:flashFXP.ini
+filetype:ini ServUDaemon
+filetype:ini wcx_ftp
+filetype:ini ws_ftp pwd
+ext:inc "pwd=" "UID="
+auth_user_file.txt
+
+inurl:b374k.php filetype:php
+inurl:c99.php
+inurl:c100.php Generation time:
+inurl:itsecteam_shell.php
+intext:x2300 Locus7Shell v. 1.0a beta Modded by
+intext:c99shell inurl:c99.php
+powered by Captain Crunch Security Team
+"inurl:c99.php" + "intext:safe"
+intitle:r57shell
+intitle:c99shell +uname
+inurl:c99.php uid=0(root)
+intitle:c99shell+filetype:php
+intitle:ly0kha shell
+inurl:.php "cURL: ON MySQL: ON MSSQL: OFF"
+"Shell" filetypehp intext:"uname -a:" "EDT 2010"
+intitle:"intitle:r57shell"
+inurl:"c99.php" & intext:Encoder Tools Proc. 
+inurl:"c100.php" & intext:Encoder Tools Proc. 
+
+filetype:xls 身份证 site:cn
+filetype:sql inurl:backup inurl:wp-content
