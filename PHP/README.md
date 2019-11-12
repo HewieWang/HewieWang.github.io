@@ -52,7 +52,11 @@ $newstr = substr($str,0,strlen($str)-1);
 ```PHP
 $newa = substr($str,0,strrpos($str,'$'));
 ```
-
+# PHP 替换所有a标签href
+###
+```PHP
+$str=preg_replace('/href=(\"|\')(.*?)(\"|\')/i','href="#"', $str);
+```
 # PHP随机调用TXT文件中一行
 ###
 ```PHP
