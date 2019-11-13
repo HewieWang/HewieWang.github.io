@@ -19,3 +19,8 @@ at 04:00 c:\apacheautostart.bat
     </system.webServer>
 </configuration>
 ```
+### IIS配置文件位置
+```Bash
+C:\Windows\System32\inetsrv\config\applicationHost.config
+如文件损坏备份位置: C:\inetpub\history
+```
