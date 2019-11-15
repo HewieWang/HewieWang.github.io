@@ -1,3 +1,7 @@
+### iframe全屏
+```Bash
+<iframe src="#" style="position:absolute; left:0; top:0; height:100%; width:100%; border:0px;" scrolling="no"></iframe>
+```
 ### (宽度自适应)：在网页代码的头部，加入一行viewport元标签
 ```Bash
 <meta name="viewport" content="width=device-width,initial-scale=1" />
