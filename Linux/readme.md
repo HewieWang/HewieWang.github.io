@@ -50,3 +50,7 @@ BOOTPROTO=dhcp（没变）
 ONBOOT=yes（修改之前是no）
 NM_CONTROLLED=no（修改之前是yes）
 ```
+# 上传下载命令：RZ，SZ
+```Bash
+yum -y install lrzsz 
+```
