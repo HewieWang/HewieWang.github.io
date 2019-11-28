@@ -51,3 +51,5 @@
 * [装逼](https://hackertyper.net/)
 * [编程随想的博客](https://program-think.blogspot.com/)
 * [在线匿名博客](http://telegra.ph/)
+* [This Waifu Does Not Exist v2](https://www.thiswaifudoesnotexist.net)
+* [This Person Does Not Exist](https://thispersondoesnotexist.com)
