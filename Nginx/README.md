@@ -26,6 +26,12 @@ logs：用来保存nginx服务器的访问日志错误日志等日志，logs目�
 
 sbin：保存nginx二进制启动脚本，可以接受不同的参数以实现不同的功能。
 ```
+加入环境变量
+```Bash
+vim /etc/profile
+export PATH=$PATH:/usr/local/nginx/sbin
+source /etc/profile
+```
 命令|作用
 --|:--:
 nginx|启动服务
