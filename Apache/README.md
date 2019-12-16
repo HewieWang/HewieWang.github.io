@@ -14,3 +14,4 @@ If you would prefer to redirect the bots to a specific page then just replace th
 ```Bash
 RewriteRule ^.*$ "http\:\/\/www.yoursite\.com\/nobots.html" [R=301,L]
 ```
+https://www.ip2location.com/free/visitor-blocker
