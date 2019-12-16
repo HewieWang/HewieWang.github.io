@@ -65,3 +65,16 @@ setup(  name = '<程序名>',
 ```Python
 python setup.py build
 ```
+### selenium指定drive,屏蔽图片
+```Python
+path = "chromedriver.exe"
+options=webdriver.ChromeOptions()
+prefs={
+	'profile.default_content_setting_values': {
+		'images': 2
+	}
+}
+options.add_experimental_option('prefs',prefs)
+b = webdriver.Chrome(executable_path=path,chrome_options=options)
+b.set_window_size(250,480)
+```
