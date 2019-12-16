@@ -48,3 +48,20 @@ pip install --upgrade pip
 http://chromedriver.storage.googleapis.com/index.html
 对应关系:https://sites.google.com/a/chromium.org/chromedriver/downloads
 ```
+### 用 cx_Freeze 将 Python 打包exe
+```Python
+import sys
+from cx_Freeze import setup, Executable
+
+# Dependencies are automatically detected, but it might need fine tuning.
+build_exe_options = {'packages': [], 'excludes': []}
+
+setup(  name = '<程序名>',
+        version = '<程序版本>',
+        description = '<程序描述>',
+        options = {'build_exe': build_exe_options},
+        executables = [Executable('main.py')])
+```
+```Python
+python setup.py build
+```
