@@ -8,6 +8,14 @@ str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
 ```Python
 num = ''.join(str(i) for i in random.sample(range(0,9),9))
 ```
+### 读取指定行
+```Python
+import linecache
+file_path = r'D:\work\python\test.txt'
+line_number = 5
+def get_line_context(file_path, line_number):
+	return linecache.getline(file_path, line_number).strip()
+```
 ### 现在的时间
 ```Python
 time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
