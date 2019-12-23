@@ -295,7 +295,57 @@ if(preg_match('/^[\x7f-\xff]+$/', $str)){
   echo '字符串不全是中文';
 }
 ```
+# PHP全排列
+###
+```PHP
+$results = [];
+$arr = [];
 
+function bfs($start) {
+    global $arr;
+    global $results;
+
+    $queue = [];
+    array_push($queue, $start);
+
+    while( !empty($queue) ) {
+        $cur = array_shift($queue);
+        if(strlen($cur) === count($arr)) {
+            array_push($results, $cur);
+        }
+
+        $arr_temp = $arr;
+        for ($i=0; $i<strlen($cur); $i++) {
+            unset($arr_temp[$cur[$i]]);
+        }
+
+        foreach ($arr_temp as $key => $value) {
+            $node = $cur . $key;
+            array_push($queue, $node);
+        }
+    }
+}
+
+function allPermutation($string) {
+    $array = [];
+    for($i=0; $i<strlen($string); $i++) {
+        array_push($array, $string[$i]);
+    }
+    sort($array);
+
+    foreach ($array as $item) {
+        global $arr;
+        $arr[$item] = 1;
+    }
+
+    foreach ($array as $item) {
+        bfs($item);
+    }
+}
+
+allPermutation('abcde');
+var_dump($results);
+```
 # XSS 和 SQL注入 过滤方法
 ## XSS 过滤：
 ###
