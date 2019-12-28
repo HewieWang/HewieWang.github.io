@@ -16,6 +16,16 @@ line_number = 5
 def get_line_context(file_path, line_number):
 	return linecache.getline(file_path, line_number).strip()
 ```
+### WriteCSV
+```Python
+import csv
+def write_csv(title,keyword):
+    path  = "baidu.csv"
+    with open(path,'a+') as f:
+        csv_write = csv.writer(f)
+        data_row = [title,keyword]
+        csv_write.writerow(data_row)
+```
 ### 现在的时间
 ```Python
 time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
