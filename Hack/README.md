@@ -18,3 +18,7 @@ WMIC USERACCOUNT WHERE "Name='[Username]'" SET PasswordExpires=FALSE
 ```Bash
 REG query HKLM\SYSTEM\CurrentControlSet\Control\Terminal" "Server\WinStations\RDP-Tcp /v PortNumber
 ```
+### cmd命令读取IIS7网站信息
+```Bash
+C:\Windows\System32\inetsrv\appcmd list VDIR
+```
