@@ -4,6 +4,24 @@
 curl_setopt($ch, CURLOPT_HEADER, false);  //设置false表示只需要响应的正文
 curl_setopt($ch, CURLOPT_NOBODY, FALSE);  //设置false表示只需要响应头部
 ```
+# 读取指定行
+###
+```PHP
+function getLine($file, $line, $length = 40960){
+    $returnTxt = null;
+    $i = 1;
+    $handle = @fopen($file, "r");
+    if ($handle) {
+        while (!feof($handle)) {
+            $buffer = fgets($handle, $length);
+            if($line == $i) $returnTxt = $buffer;
+            $i++;
+        }
+        fclose($handle);
+    }
+    return $returnTxt;
+}
+```
 # PHP7 生成指定位数随机字符串
 ###
 ```PHP
