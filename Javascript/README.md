@@ -28,6 +28,19 @@ for (var i = 0; i < 10; i++) {
 
 console.log(result);
 ```
+# 原生复制
+```Javascript
+function copy(message) {
+      var input = document.createElement("input");
+      input.value = message;
+      document.body.appendChild(input);
+      input.select();
+      input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+      document.body.removeChild(input);
+      alert("微信号复制成功！跳转到微信");
+      location.href='weixin://';
+  }
+```
 # 禁用右键和F12
 ```Javascript
 document.oncontextmenu = new Function("return false;");
