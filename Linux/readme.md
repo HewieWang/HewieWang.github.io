@@ -23,6 +23,28 @@ tar -zxvf www.tar.gz
 ```Bash
 mv www.tar.gz /home/www/
 ```
+# 神奇 指令 chattr
+###
+```Bash
+chatter: 锁定文件，不能删除，不能更改
+        +a:  只能给文件添加内容，但是删除不了，
+              chattr +a  /etc/passwd
+        -d:      不可删除
+        加锁：chattr +i  /etc/passwd       文件不能删除，不能更改，不能移动
+        查看加锁： lsattr /etc/passwd      文件加了一个参数 i 表示锁定
+        解锁：chattr -i /home/omd/h.txt    - 表示解除
+隐藏chattr命令：
+		which chattr
+		mv /usr/bin/chattr  /opt/ftl/
+		cd /opt/ftl/
+		mv chattr h    -->更改命令，使用别名h隐藏身份
+		/opt/ftl/h +i /home/omd/h.txt   -->利用h 行驶chattr命令
+		lsattr /home/omd/h.txt    -->查看加密信息
+恢复隐藏命令:
+		mv h /usr/bin/chattr
+		chattr -i /home/omd/h.txt
+		lsattr /home/omd/h.txt
+```
 # 删除文件
 ###
 ```Bash
