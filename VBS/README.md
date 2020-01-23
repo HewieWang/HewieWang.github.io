@@ -1,6 +1,12 @@
 # Useful VBS&BAT
 ### IIS7重启应用程序池
 ```Batch
+@echo off
+for /f tokens^=2^ delims^=^" %%i in ('appcmd list apppools /state:Stopped') do (
+    appcmd start apppool /apppool.name:"%%i"
+)
+```
+```Batch
 c:\windows\system32\inetsrv\AppCmd.exe stop apppool /apppool.name:"ASP.NET v4.0"
 c:\windows\system32\inetsrv\AppCmd.exe start apppool /apppool.name:"ASP.NET v4.0"
 ```
