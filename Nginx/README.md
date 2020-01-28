@@ -41,3 +41,7 @@ nginx -s stop|停止服务
 ```Bash
 ps -ef | grep nginx
 ```
+效验规则
+```Bash
+nginx -t
+```
