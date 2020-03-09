@@ -128,6 +128,28 @@ function mb_str_shuffle($str){
 ```PHP
 $yourArray = array_map('strtolower', $yourArray);
 ```
+# 判断姓名是否全是中文
+###
+```PHP
+function isAllChinese($str){
+	//新疆等少数民族可能有·
+	if(strpos($str,'·')){
+		//将·去掉，看看剩下的是不是都是中文
+		$str=str_replace("·",'',$str);
+		if(preg_match('/^[\x7f-\xff]+$/', $str)){
+			return true;//全是中文
+		}else{
+			return false;//不全是中文
+		}
+	}else{
+            if(preg_match('/^[\x7f-\xff]+$/', $str)){
+                return true;//全是中文
+            }else{
+                return false;//不全是中文
+            }
+        }
+    }
+```
 
 # PHP判断字符串是否在TXT中(按行)(黑名单)
 ###
