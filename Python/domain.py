@@ -1,7 +1,7 @@
 import itertools,requests
 http="http://"
 suffix=".com"
-for i in itertools.product('0123456789qwertyuiopasdfghjklzxcvbnm',repeat=3):
+for i in itertools.product('0123456789qwertyuiopasdfghjklzxcvbnm',repeat=5):
 	url=http+str(i).replace("'","").replace(",","").replace("(","").replace(")","")+suffix
 	url=''.join(url.split())
 	#print(url)
