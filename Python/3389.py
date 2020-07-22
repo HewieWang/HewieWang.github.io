@@ -21,6 +21,6 @@ def detect_port(ip,port):
         pass
 
 if __name__ == '__main__':
-    for ip in findIPs('103.194.104.1', '103.194.104.255'):
+    for ip in findIPs('103.100.104.1', '103.100.104.255'):
         port=3389
         detect_port(ip,port)
