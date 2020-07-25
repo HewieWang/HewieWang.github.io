@@ -112,3 +112,5 @@ if f.endswith(".txt"):
 else:
 	get_str(f)
 
+os.system('pause')
+
