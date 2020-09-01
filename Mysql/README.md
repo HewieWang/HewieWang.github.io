@@ -23,3 +23,7 @@ SET PASSWORD = PASSWORD("newpassword");
 ```SQL
 DROP USER ‘username’@'host’;
 ```
+# gzip 压缩导出
+```SQL
+mysqldump -h主机IP -u数据库用户名 -p数据库密码 数据库名称 | gzip > /导出目录/test.sql.gz
+```
