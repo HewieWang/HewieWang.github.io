@@ -1,5 +1,10 @@
 # 网址收集
 
+### CDN
+
+* [CDNJS)](https://cdnjs.com/)
+* [LayuiCDN](https://www.layuicdn.com/)
+
 ### 高质量图片&视频
 
 * [图博 - 叶流徵 - 图虫网 - 最好的摄影师都在这](https://leaphyme.tuchong.com/)
