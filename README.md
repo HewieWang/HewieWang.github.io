@@ -2,7 +2,7 @@
 
 ### CDN
 
-* [CDNJS)](https://cdnjs.com/)
+* [CDNJS](https://cdnjs.com/)
 * [LayuiCDN](https://www.layuicdn.com/)
 
 ### 高质量图片&视频
