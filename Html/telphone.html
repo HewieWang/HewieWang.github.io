@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>REX</title>
+</head>
+<body>
+<h1>Regexp</h1>
+<textarea name="TextBox1" rows="6" cols="35" id="TextBox1"></textarea>
+<input type="button" value="GetTelphone" onClick="testGG()">
+<script language="javascript">
+function testGG(){
+var xxx = document.getElementById("TextBox1");
+var yyy = xxx.value.split("\n");
+for(var i = 0;i < yyy.length;i++){
+	if((/^1[3456789]\d{9}$/.test(yyy[i]))){
+		document.write(yyy[i]+'<br>')
+	}
+    //alert(yyy[i]);
+}
+}
+</script>
+</body>
+</html>
