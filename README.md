@@ -4,7 +4,7 @@
 
 * [Laravel文档](https://learnku.com/docs/laravel/5.5)
 * [Laravel速查表](https://learnku.com/docs/laravel-cheatsheet/8.x)
-* 
+
 ### CDN
 
 * [CDNJS](https://cdnjs.com/)
