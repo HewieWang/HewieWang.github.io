@@ -23,6 +23,12 @@ tar -zxvf www.tar.gz
 ```Bash
 mv www.tar.gz /home/www/
 ```
+# crontab每3个小时执行一次
+###
+```Bash
+$ crontab -e
+1 */3 * * * commands
+```
 # 神奇 指令 chattr
 ###
 ```Bash
