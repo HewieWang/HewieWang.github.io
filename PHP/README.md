@@ -1,3 +1,8 @@
+# PHP file_put_contents追加和换行
+###
+```PHP
+file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
+```
 # PHP CURL去除响应头，响应主体的方法
 ###
 ```PHP
