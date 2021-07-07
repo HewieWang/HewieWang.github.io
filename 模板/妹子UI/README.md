@@ -1,6 +1,9 @@
 ### meiziUI好看模板
 ![meiziUI好看模板](https://i.loli.net/2021/07/07/aC9xhRiSWmTdgAP.png)
 
+### PC页面
+![8888.png](https://i.loli.net/2021/07/07/KBs2iHELdTp1o8S.png)
+
 ### 登录1
 ![dl1.png](https://i.loli.net/2021/07/07/XFhT7Gl2C9xmwaU.png)
 
