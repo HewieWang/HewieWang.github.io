@@ -1,6 +1,6 @@
 # 网址收集
 
-### CDN
+### Laravel
 
 * [Laravel文档](https://learnku.com/docs/laravel/5.5)
 * [Laravel速查表](https://learnku.com/docs/laravel-cheatsheet/8.x)
@@ -9,6 +9,12 @@
 
 * [CDNJS](https://cdnjs.com/)
 * [LayuiCDN](https://www.layuicdn.com/)
+
+### 图片优化
+
+* [最优图像优化](https://zh.recompressor.com/)
+* [压缩GIF](https://www.iloveimg.com/zh-cn/compress-image/compress-gif)
+* [WEBP格式](https://renzhezhilu.gitee.io/webp2jpg-online/)
 
 ### 高质量图片&视频
 
@@ -19,7 +25,7 @@
 * [惊人的免费图片](https://pixabay.com/)
 * [Free stock videos – Pexels Videos](https://videos.pexels.com/)
 
-### 精品软件
+### 软件
 
 * [PCHunter(Windows 下如何查看快捷键被哪个程序占用了)](http://www.pc6.com/softview/SoftView_87144.html)
 * [Snipaste(强大的截图工具可替换QQ截图)](https://zh.snipaste.com/index.html#)
