@@ -38,6 +38,7 @@
 * [GIF在线制作](http://www.gifntext.com/)
 * [图片无损压缩](https://tinypng.com/)
 * [JS加密](http://utf-8.jp/public/aaencode.html)
+* [Temp Mail - 临时性 - 匿名电子邮件](https://temp-mail.org/zh/)
 
 ### 设计元素&网络字体&APP设计
 
