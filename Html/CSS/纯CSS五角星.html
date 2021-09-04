@@ -1,0 +1,52 @@
+<style>
+.star-rating {
+        unicode-bidi: bidi-override;
+        color: #ddd;
+        font-size: 0;
+        height: 25px;
+        margin: 0 auto;
+        position: relative;
+        display: table;
+        padding: 0;
+        text-shadow: 0px 1px 0 #a2a2a2;
+    }
+
+    .star-rating span {
+        padding: 5px;
+        font-size: 20px;
+    }
+
+    .star-rating-top {
+        color: #FFD700;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .star-rating-bottom {
+        padding: 0;
+        display: block;
+        z-index: 0;
+    }
+</style> 
+<div class="star-rating">
+        <div class="star-rating-top" style="width:90%">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+        <div class="star-rating-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+        </div>
+    </div>
