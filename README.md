@@ -1,4 +1,12 @@
 # 网址收集
+### 在线工具
+
+* [URL编码解码](https://www.url-encode-decode.com/)
+* [字符串分隔](https://www.huatools.com/my-split/)
+* [正则表达式测试](https://tool.oschina.net/regex/#)
+* [文本去重](http://tool.chinaz.com/tools/textquchong)
+* [文本去除空格换行](http://www.wuqianling.top/software/notepad/compress.html)
+
 ### Golang
 
 * [PHP2Golang](https://www.php2golang.com/)
