@@ -16,6 +16,10 @@
 
 * [在线 Markdown 编辑器](https://markdown.lovejade.cn/)
 
+### 阿里云盘
+
+* [长期更新的电影资源](https://docs.qq.com/sheet/DVHpJVmRhT3ViV09Q?tab=BB08J2)
+
 ### Laravel
 
 * [Laravel文档](https://learnku.com/docs/laravel/5.5)
