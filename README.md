@@ -38,6 +38,10 @@
 
 ### 高质量图片&视频
 
+* [icons8提供大量免费的电影级别的高素质图片](https://icons8.com/photos)
+* [这里提供的免费图片，都会直达你的邮箱](https://picjumbo.com/)
+* [提供种类多样的令人惊叹的免费图片和免版税图片](https://pixabay.com/)
+* [在这里，你可以免费获取由各个不同天赋异禀天才创作者分享出来的的图片/视颜](https://www.pexels.com/?locale=en-us)
 * [图博 - 叶流徵 - 图虫网 - 最好的摄影师都在这](https://leaphyme.tuchong.com/)
 * [最出色的摄影社区 / 500px](https://500px.com/)
 * [Beautiful Free Images Pictures | Unsplash](https://unsplash.com/)
