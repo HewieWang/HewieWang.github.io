@@ -6,6 +6,7 @@
 * [正则表达式测试](https://tool.oschina.net/regex/#)
 * [文本去重](http://tool.chinaz.com/tools/textquchong)
 * [文本去除空格换行](http://www.wuqianling.top/software/notepad/compress.html)
+* [JS通知插件](https://jaredreich.com/notie/)
 
 ### Golang
 
