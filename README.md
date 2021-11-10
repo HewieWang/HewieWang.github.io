@@ -70,6 +70,9 @@
 * [JS加密](http://utf-8.jp/public/aaencode.html)
 * [Temp Mail - 临时性 - 匿名电子邮件](https://temp-mail.org/zh/)
 * [安全邮箱](https://tutanota.com/zh_hans/)
+* [随机密码生成器](http://tool.c7sky.com/password/)
+* [在线文本行右边批量增加字符串](http://www.txttool.com/t/?id=MzU0)
+* [在线EXCEL超L链接批量提取工具](https://uutool.cn/excel-link/)
 
 ### 设计元素&网络字体&APP设计
 
