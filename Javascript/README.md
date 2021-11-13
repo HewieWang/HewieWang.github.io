@@ -41,6 +41,10 @@ let nodeIterator = document.createNodeIterator(
         pars.push(currentNode);
     console.log(pars[0].textContent); // for example
 ```
+# Get child node index
+```Javascript
+for (var i=0; (node=node.previousSibling); i++);
+```
 # AJAX
 ```Javascript
 $.ajax({
