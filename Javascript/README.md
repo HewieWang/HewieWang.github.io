@@ -1,3 +1,26 @@
+# 获取字符串之间的字符串 Find string between two strings in Javascript
+```Javascript
+/**
+ * Parses substring between given begin string and end string.
+ * @param beginString the begin string
+ * @param endString the end string
+ * @param originalString the original string
+ * @returns the substring or null if either tag is not found
+ */
+function parseBetween(beginString, endString, originalString) {
+    var beginIndex = originalString.indexOf(beginString);
+    if (beginIndex === -1) {
+        return null;
+    }
+    var beginStringLength = beginString.length;
+    var substringBeginIndex = beginIndex + beginStringLength;
+    var substringEndIndex = originalString.indexOf(endString, substringBeginIndex);
+    if (substringEndIndex === -1) {
+        return null;
+    }
+    return originalString.substring(substringBeginIndex, substringEndIndex);
+}
+```
 # AJAX
 ```Javascript
 $.ajax({
