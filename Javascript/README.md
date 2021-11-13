@@ -21,6 +21,26 @@ function parseBetween(beginString, endString, originalString) {
     return originalString.substring(substringBeginIndex, substringEndIndex);
 }
 ```
+# javascript how to find that DOM node that contains a text?
+```Javascript
+let nodeIterator = document.createNodeIterator(
+        parsedHtml,
+        NodeFilter.SHOW_ELEMENT,
+        (node) => {
+            return (node.textContent.includes('mytext1')
+                || node.textContent.includes('mytext2'))
+                && node.nodeName.toLowerCase() !== 'script' // not interested in the script
+                && node.children.length === 0 // this is the last node
+                ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+    );
+    let pars = [];
+    let currentNode;
+
+    while (currentNode = nodeIterator.nextNode())
+        pars.push(currentNode);
+    console.log(pars[0].textContent); // for example
+```
 # AJAX
 ```Javascript
 $.ajax({
