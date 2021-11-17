@@ -45,7 +45,7 @@ let nodeIterator = document.createNodeIterator(
 ```Javascript
 for (var i=0; (node=node.previousSibling); i++);
 ```
-# 获取字符串之间的字符串 Find string between two strings in Javascript
+# JS等页面加载完毕后执行
 ```Javascript
 //当页面及资源完全加载后在控制台打印一段信息：
 window.addEventListener('load', (event) => {
