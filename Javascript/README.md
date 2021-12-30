@@ -1,6 +1,6 @@
 # 绑定多个事件
 ```Javascript
-['pushState','popstate','replaceState'].forEach(function(item,index){
+['resize','onload','scroll'].forEach(function(item,index){
      window.addEventListener(item, fun);
 })
 ```
