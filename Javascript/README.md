@@ -1,3 +1,9 @@
+# 绑定多个事件
+```Javascript
+['pushState','popstate','replaceState'].forEach(function(item,index){
+     window.addEventListener(item, fun);
+})
+```
 # 获取字符串之间的字符串 Find string between two strings in Javascript
 ```Javascript
 /**
