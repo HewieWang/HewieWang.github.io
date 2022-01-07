@@ -74,6 +74,7 @@
 * [GIF在线制作](http://www.gifntext.com/)
 * [图片无损压缩](https://tinypng.com/)
 * [JS加密](http://utf-8.jp/public/aaencode.html)
+* [JS加密2](https://obfuscator.io/)
 * [Temp Mail - 临时性 - 匿名电子邮件](https://temp-mail.org/zh/)
 * [安全邮箱](https://tutanota.com/zh_hans/)
 * [随机密码生成器](http://tool.c7sky.com/password/)
