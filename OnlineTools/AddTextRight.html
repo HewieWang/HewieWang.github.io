@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>在线文本行右边批量增加字符串 - 文本行</title>
+<meta name="keywords" content="TXT文本处理工具">
+<meta name="Description" content="TXT文本处理工具">
+
+    <!-- Bootstrap -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="http://101.35.26.18:88/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="http://101.35.26.18:88/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+<style>
+.navbar-default{background-color:#31ab1d;border-color:#24bb21;}.navbar-default .navbar-brand{color:#ffffff;}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#ffffff;}.navbar-default .navbar-text{color:#ffffff;}.navbar-default .navbar-nav > li > a{color:#ffffff;}.navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > li > a:focus{color:#ffffff;}.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:hover,.navbar-default .navbar-nav > .active > a:focus{color:#ffffff;background-color:#24bb21;}.navbar-default .navbar-nav > .open > a,.navbar-default .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus{color:#ffffff;background-color:#24bb21;}.navbar-default .navbar-toggle{border-color:#24bb21;}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#24bb21;}.navbar-default .navbar-toggle .icon-bar{background-color:#ffffff;}.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#ffffff;}.navbar-default .navbar-link{color:#ffffff;}.navbar-default .navbar-link:hover{color:#ffffff;}@media (max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu > li > a{color:#ffffff;}.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{color:#ffffff;}.navbar-default .navbar-nav .open .dropdown-menu > .active > a,.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus{color:#ffffff;background-color:#24bb21;}}.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#31ab1d;border-color:#24bb21;}.panel-primary{border-color:#24bb21;}.panel-primary>.panel-heading{color:#fff;background-color:#31ab1d;border-color:#24bb21;}
+</style>
+  </head>
+<body>
+<a name="gotop"></a>
+<div class="container">
+<style>
+	.my ul {
+		width: 810px;
+	}
+	.my li {
+		width: 100px;   /*如果显示三列 则width改为70px*/
+		float: left;
+		display: block;
+	}
+</style>
+<script src="http://101.35.26.18:88/static/js/nowtime.js"></script>
+<div class="panel panel-default">
+  <div class="panel-heading" align="right"><!--标签按钮-->
+    
+<!--标签按钮--></div>
+  <div class="panel-body">
+<!--页头-->
+<div class="page-header">
+<div align="center">
+  <h3>在线文本行右边批量增加字符串 - 文本行 <small></small></h3>
+  </div>
+</div>
+<table class="table">
+ <tr align="center">
+   <td height="25"><!--Output Section--><div class="">
+      <p>内容:</p>
+      <input type="text" id="strnum" name="strnum" value="☆"  />
+    </div>
+    <div class="insertSection">
+      <p>输入文本:</p>
+      <textarea rows="10" id="inputstr" name="InputString" class="form-control">www.000.com
+www.111.com
+www.222.com</textarea>
+    </div>
+    <!--Insert Section-->
+    
+    <div class="outputSection">
+      <p>处理后:</p>
+      <textarea rows="10" id="outputstr" name="OutString" readonly class="form-control">www.000.com☆
+www.111.com☆
+www.222.com☆
+      </textarea>
+    </div>
+   </td>
+ </tr>
+</table><br/>
+
+<style>
+.dbubble-text {
+display: inline-block;
+font-size: 14px;
+color: #303030;
+line-height: 1.6;
+font-family: "微软雅黑";
+word-wrap: break-word;
+word-break: break-all;
+overflow: hidden;
+}
+</style>
+<div class="dbubble-text">
+ </div>
+<!--info-->
+ 
+  </div>
+</div>
+</DIV>
+<script src="http://101.35.26.18:88/static/js/jquery-3.2.1.min.js"></script>
+<script src="http://101.35.26.18:88/static/js/clipboard.min.js"></script>
+<script src="http://101.35.26.18:88/static/js/layer/layer.js"></script>
+<script src="http://101.35.26.18:88/static/js/public.min.js"></script>
+<script>
+$(function() {
+				   $("#inputstr").keyup(function(){StrReplace();});
+				   $("#strnum").keyup(function(){StrReplace();});
+				
+ /// 
+				   $('textarea').each(function(index, element) {
+						var $element = $(element);
+						var defaultValue = $element.val();
+						$element.focus(function() {
+							var actualValue = $element.val();
+							if (actualValue == defaultValue) {
+								$element.val('');
+							}
+						});
+						$element.blur(function() {
+							var actualValue = $element.val();
+							if (!actualValue) {
+								$element.val(defaultValue);
+							}
+						});
+					});
+				/////
+		});
+		
+		function StrReplace(){
+			if($("#strnum").val().length > 0){
+				if($("#inputstr").val().length > 0){
+					
+					
+				var str = $("#inputstr").val();
+				 var num = $("#strnum").val();
+				 var getArr = str.split("\n");
+                 var strreverse = "";
+   for(var i=0; i<getArr.length; i++) { 
+			strreverse = strreverse +getArr[i]+num+"\n";
+
+          } 
+		  
+		$("#outputstr").val(strreverse);
+				}
+			}
+		}
+</script><!-- script  -->
+<script>
+var clipboard = new ClipboardJS('#copyurl');
+clipboard.on('success',function(e){
+	e.clearSelection();
+	layer.msg('复制成功！');
+});
+
+clipboard.on('error',function(e){
+	e.clearSelection();
+	layer.msg('复制失败！');
+});
+</script>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>-->
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<!--<script src="http://101.35.26.18:88/bootstrap-3.4.1/js/bootstrap.min.js"></script>-->
+<!--<script src="http://101.35.26.18:88/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>-->
+	
+</BODY></HTML>
