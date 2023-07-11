@@ -1,5 +1,10 @@
 # Python
 
+### Python打包 nuitka 更优秀的打包库
+```Python
+python -m pip install nuitka    ###加速  pip install -i https://pypi.tuna.tsinghua.edu.cn/simple nuitka
+python -m nuitka hello.py       ###完结，就这么牛逼，实测Pyinstaller打包出错，这个一下就OK，简直无敌
+```
 ### 生成8位随机字符串
 ```Python
 str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
