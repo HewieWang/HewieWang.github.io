@@ -1,14 +1,17 @@
 [
   {
     "LICENSE_KEY": "license_key_1",
-    "EXPIRATION_DATE": "2024-12-31"
+    "EXPIRATION_DATE": "2024-12-31",
+    "COMPUTER_IDENTIFIER":"111"
   },
   {
     "LICENSE_KEY": "license_key_2",
-    "EXPIRATION_DATE": "2025-06-30"
+    "EXPIRATION_DATE": "2025-06-30",
+    "COMPUTER_IDENTIFIER":"111"
   },
   {
     "LICENSE_KEY": "license_key_3",
-    "EXPIRATION_DATE": "2023-09-15"
+    "EXPIRATION_DATE": "2023-09-15",
+    "COMPUTER_IDENTIFIER":"111"
   }
 ]
