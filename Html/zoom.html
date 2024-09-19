@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取网页宽高与分辨率</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .info {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>网页与屏幕信息</h1>
+    <div class="info">网页宽度: <span id="windowWidth"></span></div>
+    <div class="info">网页高度: <span id="windowHeight"></span></div>
+    <div class="info">屏幕分辨率宽度: <span id="screenWidth"></span></div>
+    <div class="info">屏幕分辨率高度: <span id="screenHeight"></span></div>
+    <div class="info">缩放倍数: <span id="zoomLevel"></span></div>
+    <div class="info">设备像素比(DPR): <span id="devicePixelRatio"></span></div>
+
+    <script>
+        // 获取网页宽度与高度
+        function getWindowDimensions() {
+            document.getElementById('windowWidth').innerText = window.innerWidth;
+            document.getElementById('windowHeight').innerText = window.innerHeight;
+        }
+
+        // 获取屏幕分辨率
+        function getScreenResolution() {
+            document.getElementById('screenWidth').innerText = window.screen.width;
+            document.getElementById('screenHeight').innerText = window.screen.height;
+        }
+
+        // 获取缩放倍数 (通过计算 window.innerWidth 和 screen.width 的比例)
+        function getZoomLevel() {
+            let zoomLevel = (window.innerWidth / window.screen.width).toFixed(2);
+            document.getElementById('zoomLevel').innerText = zoomLevel;
+        }
+
+        // 获取设备像素比 (通常反映屏幕缩放情况)
+        function getDevicePixelRatio() {
+            let dpr = window.devicePixelRatio;
+            document.getElementById('devicePixelRatio').innerText = dpr;
+        }
+
+        // 调用函数获取信息并显示
+        function displayInfo() {
+            getWindowDimensions();
+            getScreenResolution();
+            getZoomLevel();
+            getDevicePixelRatio();
+        }
+
+        // 监听页面大小的变化
+        window.onresize = displayInfo;
+
+        // 初次加载页面时显示信息
+        displayInfo();
+    </script>
+
+</body>
+</html>
