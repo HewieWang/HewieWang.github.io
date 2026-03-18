@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纯色图片生成器</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        canvas {
+            display: block;
+            margin: 1rem auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            height: 200px;
+        }
+        .controls {
+            margin: 1rem 0;
+        }
+        input[type="color"] {
+            width: 60px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        p {
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🎨 纯色图片生成器</h2>
+        <canvas id="colorCanvas" width="600" height="600"></canvas>
+        <div class="controls">
+            <label for="colorPicker">选择颜色：</label>
+            <input type="color" id="colorPicker" value="#4CAF50">
+            <button id="generateBtn">生成图片</button>
+        </div>
+        <p>点击按钮或选择颜色后，Canvas 会更新为纯色。<br>你可以右键点击 Canvas 保存图片。</p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('colorCanvas');
+        const ctx = canvas.getContext('2d');
+        const colorPicker = document.getElementById('colorPicker');
+        const generateBtn = document.getElementById('generateBtn');
+
+        // 初始化：用默认颜色填充
+        function fillCanvas(color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // 默认颜色
+        fillCanvas(colorPicker.value);
+
+        // 颜色选择器变化时实时更新
+        colorPicker.addEventListener('input', (e) => {
+            fillCanvas(e.target.value);
+        });
+
+        // 点击按钮再次生成（实际上与实时更新相同，但可以作为手动触发）
+        generateBtn.addEventListener('click', () => {
+            fillCanvas(colorPicker.value);
+        });
+    </script>
+</body>
+</html>
